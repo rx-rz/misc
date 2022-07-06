@@ -1,12 +1,11 @@
-import React from 'react'
-import Link from '../home/Link'
-
-export default function Navbar() {
+type NavbarProps = {
+    children: React.ReactNode[]
+}
+/**The Navbar Component accepts 3 link items as children and justifies them evenly */
+export default function Navbar({children}: NavbarProps) {
   return (
-    <div className='w-screen flex flex-row justify-evenly h-8 bg-slate-200'>
-        <Link children='Home' location='/'/>
-        <Link children='About' location='/'/>
-        <Link children='Profile' location='/'/>
-    </div>
+    <header className='bg-gray-900 w-screen h-4 flex justify-between'>
+        {...children}
+    </header>
   )
 }
