@@ -6,9 +6,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#FF3CAC",
-        secondary: "#784BA0",
-        tertiary: "#2B86C5" 
+        primary: "#00DBDE",
+        secondary: "#FC00FF",
+        // tertiary: "#2B86C5" 
       },
       fontFamily: {
         Poppins: ["Poppins, sans-serif"]
@@ -17,3 +17,4 @@ module.exports = {
   },
   plugins: [],
 }
+

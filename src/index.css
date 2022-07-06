@@ -2,3 +2,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.gradient {
+ @apply bg-gradient-to-r from-primary to-secondary  bg-clip-text text-transparent   
+}

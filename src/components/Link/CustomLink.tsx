@@ -6,7 +6,7 @@ type LinkProps = {
     location: string,
     className: string,
 }
-export default function Link({children, location, className}: LinkProps) {
+export default function CustomLink({children, location, className}: LinkProps) {
   return <NavLink to={location} className={className}>
     {children}
   </NavLink>
