@@ -1,11 +1,13 @@
-type NavbarProps = {
-    children: React.ReactNode[]
-}
+import Header from "../Header/Header"
+import Link from "../Link/Link"
+
+
 /**The Navbar Component accepts 3 link items as children and justifies them evenly */
-export default function Navbar({children}: NavbarProps) {
+export default function Navbar() {
   return (
-    <header className='bg-gray-900 w-screen h-4 flex justify-between'>
-        {...children}
-    </header>
+    <Header>
+        <Link className="font-extrabold text-transparent  bg-gradient-to-r from-primary via-secondary to-tertiary bg-clip-text text-xl" location="/">BUYAVATARS</Link>
+        <Link className="text-white" location="/">Cart</Link>
+    </Header>
   )
 }

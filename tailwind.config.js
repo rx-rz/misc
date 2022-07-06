@@ -6,9 +6,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#FA8BFF",
-        secondary: "#FA8BFF",
-        tertiary: "#2BFF88" 
+        primary: "#FF3CAC",
+        secondary: "#784BA0",
+        tertiary: "#2B86C5" 
+      },
+      fontFamily: {
+        Poppins: ["Poppins, sans-serif"]
       }
     },
   },
