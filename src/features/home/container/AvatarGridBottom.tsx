@@ -19,7 +19,7 @@ export default function AvatarGridBottom() {
               name={product.name.replace(/-/m, " ")}
               price={product.price}
             />
-            <Button handleClick={() => setCount(0)}>Add To Cart</Button>
+
           </Link>
         ))}
       </div>
@@ -32,7 +32,7 @@ export default function AvatarGridBottom() {
               name={product.name.replace(/-/m, " ")}
               price={product.price}
             />
-            <Button handleClick={() => setCount(0)}>Add To Cart</Button>
+
           </Link>
         ))}
       </div>

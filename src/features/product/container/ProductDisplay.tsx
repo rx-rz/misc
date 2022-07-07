@@ -1,15 +1,12 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import ProductCard from "src/components/Card/ProductCard";
-
+import {getProductImages} from "src/features/product/api/getProductImages"
 type ProductDisplayProps = {
     name: string | undefined
 }
 export default function ProductDisplay({name}: ProductDisplayProps) {
 
   return (
-    <div className="md:w-9/12" >
-        <img src="" alt="" />
-    </div>
+
+      <img className="md:w-8/12 object-cover md:h-maximalHeight" src={getProductImages(name)} alt={name}/>
+    
   );
 }

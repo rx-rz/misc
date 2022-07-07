@@ -1,6 +1,6 @@
 export default function DescriptionText() {
   return (
-    <div className="text-xl text-center sm:text-2xl  w-4/6 py-8 font-medium dark:text-white text-black">
+    <div className="text-xl text-center self-center sm:text-2xl  w-4/6 py-8 font-medium dark:text-white text-black">
       <span className="gradient font-extrabold">Misc is an art collection of 20 unique surreal avatars created by Adeleye
       Temiloluwa that live on the Firebase blockchain. </span>‍ Avatars are the
       foundation of all life on the digital system, upon which machines and
