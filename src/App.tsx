@@ -4,6 +4,7 @@ import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Layout/Navbar";
 
 import HomePage from "./pages/HomePage";
+import ProductPage from "./pages/ProductPage";
 
 
 export default function App() {
@@ -20,6 +21,8 @@ export default function App() {
           <Navbar handleChange={toggleTheme} theme={theme}/>
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/:name" element={<ProductPage />} />
+
           </Routes>
           <Footer />
         </Router>
