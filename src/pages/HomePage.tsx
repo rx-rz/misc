@@ -7,12 +7,11 @@ import IntroText from 'src/features/home/container/IntroText'
 
 export default function HomePage() {
   return (
-    <div className='bg-gray-900 flex flex-col items-center'>
+    <div className='bg-gray-900 flex flex-col items-center w-fit'>
       <IntroText/>
       <AvatarGrid/>
       <DescriptionText/>
       <AvatarGridBottom/>
-      {/* <Footer/> */}
     </div>
   )
 }

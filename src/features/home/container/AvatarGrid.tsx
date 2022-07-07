@@ -8,49 +8,49 @@ export default function AvatarGrid() {
       <Link to={"/product/big-ears"}>
         <ProductCard
           imageUrl={getImage("big-ears")}
-          name="Big Ears"
+          name="big ears"
           price={100}
         />
       </Link>
       <Link to={"/product/bottts"}>
-        <ProductCard imageUrl={getImage("bottts")} name="Bottts" price={100} />
+        <ProductCard imageUrl={getImage("bottts")} name="bottts" price={100} />
       </Link>
 
       <Link to={"/product/personas"}>
         <ProductCard
           imageUrl={getImage("personas")}
-          name="Personas"
+          name="personas"
           price={90}
         />
       </Link>
       <Link to={"/product/micah"}>
-        <ProductCard imageUrl={getImage("micah")} name="Micah" price={80} />
+        <ProductCard imageUrl={getImage("micah")} name="micah" price={80} />
       </Link>
       <Link to={"/product/adventurer"}>
         <ProductCard
           imageUrl={getImage("adventurer")}
-          name="Adventurer"
+          name="adventurer"
           price={150}
         />
       </Link>
       <Link to={"/product/miniavs"}>
         <ProductCard
           imageUrl={getImage("miniavs")}
-          name="Miniavs"
+          name="miniavs"
           price={200}
         />
       </Link>
       <Link to={"/product/big-smile"}>
         <ProductCard
           imageUrl={getImage("big-smile")}
-          name="Big Smile"
+          name="big smile"
           price={150}
         />
       </Link>
       <Link to={"/product/jdenticon"}>
         <ProductCard
           imageUrl={getImage("jdenticon")}
-          name="Jdenticon"
+          name="jdenticon"
           price={200}
         />
       </Link>

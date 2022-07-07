@@ -12,6 +12,9 @@ module.exports = {
       },
       fontFamily: {
         Poppins: ["Poppins, sans-serif"]
+      },
+      fontSize: {
+        magicNo: "25.5vw"
       }
     },
   },
