@@ -21,7 +21,7 @@ export default function App() {
           <Navbar handleChange={toggleTheme} theme={theme}/>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/:name" element={<ProductPage />} />
+            <Route path="/:name/:price" element={<ProductPage />} />
 
           </Routes>
           <Footer />

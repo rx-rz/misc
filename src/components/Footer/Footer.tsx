@@ -15,7 +15,7 @@ export default function Footer() {
           Reddit
         </a>
       </div>
-      <div className="text-6xl font-extrabold grid place-content-center gradient w-1/2 sm:text-9xl"> <Link to="/"> MISC</Link></div>
+      <div className="text-5xl font-extrabold grid place-content-center gradient w-1/2 sm:text-7xl"> <Link to="/"> MISC</Link></div>
 
       {/* <div className="w-1/2 flex flex-col text-2xl sm:text-5xl m-32">
         <a href="https://www.twitter.com/temiloluwa_js">Twitter</a>
