@@ -7,7 +7,7 @@ import HomePage from "./pages/HomePage";
 
 export default function index() {
   return (
-    <div className="bg-gray-900 font-Poppins text-white m-0">
+    <div className="dark:bg-gray-900 font-Poppins dark:text-white m-0 bg-slate-100 dark">
       <Router>
         <Navbar/>
         <Routes>

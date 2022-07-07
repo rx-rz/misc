@@ -6,7 +6,7 @@ export default function Button({ children, handleClick }: ButtonProps) {
   return (
     <button
       onClick={handleClick}
-      className="bg-gradient-to-r p-2 from-primary to-secondary transition-colors duration-300 hover:bg-secondary w-fit"
+      className="bg-secondary transition-colors duration-300 dark:text-white text-black hover:bg-primary p-1 w-fit"
     >
       {children}
     </button>

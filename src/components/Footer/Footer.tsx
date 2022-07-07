@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="h-52 sm:h-96 bg-gray-900 flex">
+    <footer className="h-52 sm:h-96 dark:bg-gray-900 flex">
       <div className="text-2xl sm:text-5xl flex flex-col justify-center w-1/2 text-center">
         <a href="https://www.twitter.com/temiloluwa_js" className="my-2 transition-colors duration-300 hover:text-blue-600">
           Twitter
@@ -14,7 +15,7 @@ export default function Footer() {
           Reddit
         </a>
       </div>
-      <div className="text-6xl font-extrabold grid place-content-center gradient w-1/2 sm:text-9xl">MISC</div>
+      <div className="text-6xl font-extrabold grid place-content-center gradient w-1/2 sm:text-9xl"> <Link to="/"> MISC</Link></div>
 
       {/* <div className="w-1/2 flex flex-col text-2xl sm:text-5xl m-32">
         <a href="https://www.twitter.com/temiloluwa_js">Twitter</a>

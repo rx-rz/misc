@@ -12,7 +12,7 @@ export default function AvatarGridBottom() {
       <Marquee>ALL AVAILABLE AVATARS ✌</Marquee>
       <div className="flex flex-wrap basis-7 md:basis-12 justify-center py-4 sm:py-8">
         {ProductsOne.map((product, index) => (
-          <div className="m-4">
+          <div className="m-12" key={index}>
             <ProductCard
               imageUrl={getImage(product.name)}
               name={product.name.replace(/-/m, " ")}
@@ -25,7 +25,7 @@ export default function AvatarGridBottom() {
       <Marquee>ALL AVAILABLE AVATARS ✌</Marquee>
       <div className="flex flex-wrap basis-7 md:basis-12 justify-center py-4 sm:py-8">
         {ProductsTwo.map((product, index) => (
-          <div className="m-4">
+          <div className="m-12" key={index}>
             <ProductCard
               imageUrl={getImage(product.name)}
               name={product.name.replace(/-/m, " ")}
