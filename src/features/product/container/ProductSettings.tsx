@@ -7,8 +7,13 @@ type ProductSettingsProps = {
   price: number | string | undefined;
 };
 
+
 export default function ProductSettings({ name, price }: ProductSettingsProps) {
-  const {addCartItem} = useStateContext()
+  const {onAdd, decreaseQuantity, increaseQuantity, quantity, cartItems} = useStateContext()
+  const product = {
+    name: name,
+    price: price
+  }
   return (
     <div className="md:w-4/12 flex justify-center items-center  md:h-maximalHeight flex-col h-halfHeight">
       <div className="w-3/4">
@@ -18,11 +23,22 @@ export default function ProductSettings({ name, price }: ProductSettingsProps) {
         <p className="text-3xl font-medium md:text-4xl lg:text-7xl dark:text-white mb-4">
           ${price}
         </p>
-        <button className="w-full font-extrabold bg-secondary  p-2 transition duration-300 hover:bg-primary" onClick={addCartItem(name, price, 0)}>
+        <button className="w-full font-extrabold bg-secondary  p-2 transition duration-300 hover:bg-primary" onClick={() => onAdd(product, quantity)}>
           ADD TO CART
         </button>
       </div>
-      <Counter/>
+      <div className='flex'>
+      <p>Quantity: </p>
+      <div>
+        {quantity}
+        {cartItems && cartItems.map((cartItem: ProductSettingsProps) => (
+          <p>{cartItem.name} {cartItem.price}</p>
+        ))}
+        <button onClick={decreaseQuantity}>-</button>
+        <p>0</p>
+        <button onClick={increaseQuantity}>+</button>
+      </div>
+    </div>
     </div>
   );
 }
