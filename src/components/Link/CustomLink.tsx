@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 type LinkProps = {
-    children: string,
+    children: string | any,
     location: string,
     className: string,
 }

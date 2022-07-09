@@ -1,7 +1,5 @@
-import React from "react";
-import Button from "src/components/Button/Button";
-import { useStateContext } from 'src/context/count-context.js'
-import Counter from "src/components/Counter/Counter";
+import React, { useEffect } from "react";
+import { useStateContext } from 'src/context/count-context'
 type ProductSettingsProps = {
   name: string | undefined;
   price: number | string | undefined;
@@ -9,11 +7,17 @@ type ProductSettingsProps = {
 
 
 export default function ProductSettings({ name, price }: ProductSettingsProps) {
-  const {onAdd, decreaseQuantity, increaseQuantity, quantity, cartItems} = useStateContext()
+  const {onAdd, decreaseQuantity, increaseQuantity, quantity, setQuantity, cartItems} = useStateContext()
+  useEffect(() => {
+    if(quantity){
+      setQuantity(1)
+    }
+  }, [])
   const product = {
     name: name,
     price: price
   }
+
   return (
     <div className="md:w-4/12 flex justify-center items-center  md:h-maximalHeight flex-col h-halfHeight">
       <div className="w-3/4">
@@ -31,8 +35,8 @@ export default function ProductSettings({ name, price }: ProductSettingsProps) {
       <p>Quantity: </p>
       <div>
         {quantity}
-        {cartItems && cartItems.map((cartItem: ProductSettingsProps) => (
-          <p>{cartItem.name} {cartItem.price}</p>
+        {cartItems && cartItems.map((cartItem: ProductSettingsProps, index: number) => (
+          <p key={index}>{cartItem.name} {cartItem.price}</p>
         ))}
         <button onClick={decreaseQuantity}>-</button>
         <p>0</p>

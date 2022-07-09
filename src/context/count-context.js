@@ -1,58 +1,58 @@
 import React, { useContext, useState } from "react";
 import { createContext } from "react";
 
-
-const StateContext = createContext()
+const StateContext = createContext();
 export const StateContextProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState([]);
+  const itemsInStorage = localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")): []
+  const [cartItems, setCartItems] = useState(itemsInStorage);
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalQuantities, setTotalQuantities] = useState(0);
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
 
   const onAdd = (product, quantity) => {
-    const checkProductInCart = cartItems.filter((item) => item.name === product.name)
-    setTotalPrice((prevTotalPrice) => prevTotalPrice + product.price * quantity)
-    setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + quantity)
-    if(checkProductInCart){
-      const updatedCartItems = cartItems.forEach((cartProduct) => {
-        if(cartProduct.name === product.name){
-          return {...cartProduct, quantity: cartProduct.quantity + quantity}
-        }
-      })
-      // console.log(true)
-      // const updatedCartItems = cartItems.map((cartProduct) => {
-      //   if(cartProduct.name === product.name) return {
-      //     ...cartProduct,
-      //     quantity: cartProduct.quantity + quantity
-      //   }
-      // })
+    console.log(itemsInStorage);
+    const exist = cartItems.find((item) => item.name === product.name);
+    if (!exist) {
+      setCartItems([...cartItems, { ...product, quantity: quantity }]);
+    } else {
+      const updatedCartItems = cartItems.map((cartItem) =>
+        cartItem.name === product.name
+          ? { ...exist, quantity: quantity }
+          : cartItem
+      );
       setCartItems(updatedCartItems)
-    }else{
-      product.quantity = quantity;
-      setCartItems([...cartItems, {...product}])
+      localStorage.setItem("cart", JSON.stringify(cartItems))
+      console.log(localStorage.getItem("cart"))
     }
-    console.log(cartItems)
-  }
+  };
 
   const increaseQuantity = () => {
-    setQuantity((prevQuantity) => prevQuantity + 1)
-  }
+    setQuantity((prevQuantity) => prevQuantity + 1);
+  };
 
   const decreaseQuantity = () => {
     setQuantity((prevQuantity) => {
-      if(prevQuantity - 1 < 1) return 1;
-      return prevQuantity - 1
-    })
-
-  }
-
-  
+      if (prevQuantity - 1 < 1) return 1;
+      return prevQuantity - 1;
+    });
+  };
 
   return (
-    <StateContext.Provider value={{cartItems, totalPrice, totalQuantities, quantity, increaseQuantity, decreaseQuantity, onAdd}}>
+    <StateContext.Provider
+      value={{
+        cartItems,
+        totalPrice,
+        totalQuantities,
+        quantity,
+        setQuantity,
+        increaseQuantity,
+        decreaseQuantity,
+        onAdd,
+      }}
+    >
       {children}
     </StateContext.Provider>
   );
 };
 
-export const useStateContext = () => useContext(StateContext)
+export const useStateContext = () => useContext(StateContext);

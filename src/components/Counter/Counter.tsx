@@ -1,5 +1,5 @@
 import React from 'react'
-import { useStateContext } from 'src/context/count-context.js'
+import { useStateContext } from 'src/context/count-context'
 export default function Counter() {
 
   const {quantity, decreaseQuantity, increaseQuantity} = useStateContext()
@@ -7,9 +7,8 @@ export default function Counter() {
     <div className='flex'>
       <p>Quantity: </p>
       <div>
-        {quantity}
         <button onClick={decreaseQuantity}>-</button>
-        <p>0</p>
+        <p>{quantity}</p>
         <button onClick={increaseQuantity}>+</button>
       </div>
     </div>

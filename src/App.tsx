@@ -1,11 +1,12 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { StateContextProvider } from "src/context/count-context.js";
+
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Layout/Navbar";
-
 import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
-import { StateContextProvider } from "./context/count-context.js";
+
 
 
 export default function App() {
