@@ -4,6 +4,7 @@ import { StateContextProvider } from "src/context/count-context.js";
 
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Layout/Navbar";
+import CartPage from "./pages/CartPage";
 import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
 
@@ -24,6 +25,7 @@ export default function App() {
           <Navbar handleChange={toggleTheme} theme={theme}/>
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/cart" element={<CartPage />} />
             <Route path="/:name/:price" element={<ProductPage />} />
 
           </Routes>
