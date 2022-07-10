@@ -6,11 +6,9 @@ import { ProductProps } from "src/types/Product";
 export default function CartList() {
   const { cartItems } = useStateContext();
   const cartRef = useRef<HTMLDivElement>(null);
-  const handleClose = () => {
-    cartRef.current!.style.display = "none";
-  };
+
   return (
-    <div className="flex flex-col align-middle w-96 h-maximalHeight" ref={cartRef}>
+    <div className="flex flex-col align-middle w-smallWidth md:w-mediumWidth lg:w-96 h-maximalHeight overflow-y-scroll" ref={cartRef}>
 
       <div>
         {cartItems.map((cartItem: ProductProps) => (

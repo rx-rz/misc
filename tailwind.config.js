@@ -13,8 +13,15 @@ module.exports = {
         // tertiary: "#2B86C5" 
       },
       height: {
-        maximalHeight: "calc(100vh - 3rem)",
+        maximalHeight: "calc((100vh - 3rem) - 4px)",
         halfHeight: "40vh"
+      },
+      minHeight: {
+        maximalHeight: "calc((100vh - 3rem) - 4px)",
+      },
+      width: {
+        smallWidth: "90vw",
+        mediumWidth: "60vw"
       },
       fontFamily: {
         Poppins: ["Poppins, sans-serif"]
