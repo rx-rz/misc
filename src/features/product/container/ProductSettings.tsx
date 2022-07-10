@@ -34,12 +34,8 @@ export default function ProductSettings({ name, price }: ProductSettingsProps) {
       <div className='flex'>
       <p>Quantity: </p>
       <div>
-        {quantity}
-        {cartItems && cartItems.map((cartItem: ProductSettingsProps, index: number) => (
-          <p key={index}>{cartItem.name} {cartItem.price}</p>
-        ))}
         <button onClick={decreaseQuantity}>-</button>
-        <p>0</p>
+        <p>{quantity}</p>
         <button onClick={increaseQuantity}>+</button>
       </div>
     </div>
