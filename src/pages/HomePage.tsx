@@ -14,9 +14,9 @@ export default function HomePage() {
         <DescriptionText />
         <AvatarGridBottom />
       </div>
-      <div className="w-80 sm:w-96 h-maximalHeight absolute right-0 top-0 dark:bg-gray-900 bg-slate-100 border-2">
+      {/* <div className="w-80 sm:w-96 h-maximalHeight absolute right-0 top-0 dark:bg-gray-900 bg-slate-100 border-2">
         <CartList/>
-      </div>
+      </div> */}
     </div>
   );
 }

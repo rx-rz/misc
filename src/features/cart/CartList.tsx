@@ -1,17 +1,17 @@
-import React from "react";
+import React, { useRef } from "react";
 import Button from "src/components/Button/Button";
 import CartItem from "src/components/CartItem/CartItem";
 import { useStateContext } from "src/context/count-context";
 import { ProductProps } from "src/types/Product";
 export default function CartList() {
   const { cartItems } = useStateContext();
+  const cartRef = useRef<HTMLDivElement>(null);
+  const handleClose = () => {
+    cartRef.current!.style.display = "none";
+  };
   return (
-    <div className="flex flex-col align-middle">
-      <Button
-        handleClick={() => console.log("")}
-        text="CLOSE CART"
-        className=" w-4/12 ml-1 mt-2 font-bold "
-      />
+    <div className="flex flex-col align-middle w-96 h-maximalHeight" ref={cartRef}>
+
       <div>
         {cartItems.map((cartItem: ProductProps) => (
           <CartItem name={cartItem.name} price={cartItem.price} />
