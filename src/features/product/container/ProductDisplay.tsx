@@ -1,12 +1,18 @@
-import {getProductImages} from "src/features/product/api/getProductImages"
+import {getProductImages} from 'src/features/product/api/getProductImages'
 type ProductDisplayProps = {
-    name: string | undefined
-}
-export default function ProductDisplay({name}: ProductDisplayProps) {
+  imageType: string | undefined,
+  imageName: string | undefined
+};
 
+export default function ProductDisplay({ imageType, imageName }: ProductDisplayProps) {
   return (
+    <div className='md:w-5/12'>
+      <img
+        className="object-center object-cover md:h-maximalHeight"
+        src={getProductImages(imageType, imageName)}
+        alt={imageType}
+      />
 
-      <img className="md:w-8/12 object-cover md:h-maximalHeight" src={getProductImages(name)} alt={name}/>
-    
+    </div>
   );
 }

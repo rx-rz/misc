@@ -12,7 +12,7 @@ export default function CartList() {
 
       <div>
         {cartItems.map((cartItem: ProductProps) => (
-          <CartItem name={cartItem.name} price={cartItem.price} />
+          <CartItem name={cartItem.name} price={cartItem.price} key={cartItem.name}/>
         ))}
       </div>
       <Button
