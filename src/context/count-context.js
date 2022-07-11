@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useLayoutEffect, useState } from "react";
 import { createContext } from "react";
 
 const StateContext = createContext();
@@ -9,8 +9,12 @@ export const StateContextProvider = ({ children }) => {
   const [totalQuantities, setTotalQuantities] = useState(0);
   const [quantity, setQuantity] = useState(1);
 
+  useLayoutEffect(() => {
+    setTotalQuantities(cartItems.length)
+  }, [cartItems])
+
   const onAdd = (product, quantity) => {
-    console.log(itemsInStorage);
+    setTotalQuantities((prevQuantity) => prevQuantity + (quantity * product.price))
     const exist = cartItems.find((item) => item.name === product.name);
     if (!exist) {
       setCartItems([...cartItems, { ...product, quantity: quantity }]);
@@ -27,7 +31,7 @@ export const StateContextProvider = ({ children }) => {
   };
 
   const increaseQuantity = () => {
-    setQuantity((prevQuantity) => prevQuantity + 1);
+    setQuantity((prevQuantity) => prevQuantity + 1)
   };
 
   const decreaseQuantity = () => {
