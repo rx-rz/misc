@@ -19,7 +19,7 @@ export default function ProductSettings({ name, price }: ProductSettingsProps) {
   };
 
   return (
-    <div className="md:w-4/12 flex justify-center items-center  md:h-maximalHeight flex-col h-halfHeight ">
+    <div className="md:w-5/12 flex justify-center items-center  md:h-maximalHeight flex-col h-halfHeight ">
       <div className="w-5/6 lg:w-4/6  flex flex-col ">
         <h1 className="gradient text-4xl md:text-5xl font-medium py-3 lg:text-6xl w-5/6 m-auto">
           {name}

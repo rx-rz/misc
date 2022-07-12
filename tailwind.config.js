@@ -13,11 +13,12 @@ module.exports = {
         // tertiary: "#2B86C5" 
       },
       height: {
-        maximalHeight: "calc((100vh - 3rem) - 4px)",
-        halfHeight: "40vh"
+        maximalHeight: "calc(100vh - 3rem)",
+        halfHeight: "40vh",
+        cartHeight: "calc(100vh - 7.5rem)"
       },
       minHeight: {
-        maximalHeight: "calc((100vh - 3rem) - 4px)",
+        maximalHeight: "calc(100vh - 3rem)",
       },
       width: {
         smallWidth: "90vw",
@@ -28,9 +29,11 @@ module.exports = {
       },
       fontSize: {
         magicNo: "25.5vw"
-      }
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar')
+  ],
 }
 

@@ -14,7 +14,9 @@ export const StateContextProvider = ({ children }) => {
   }, [cartItems])
 
   const onAdd = (product, quantity) => {
-    setTotalQuantities((prevQuantity) => prevQuantity + (quantity * product.price))
+    // localStorage.clear()
+    // setCartItems([])
+    
     const exist = cartItems.find((item) => item.name === product.name);
     if (!exist) {
       setCartItems([...cartItems, { ...product, quantity: quantity }]);
