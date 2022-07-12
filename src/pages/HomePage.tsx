@@ -5,7 +5,7 @@ import IntroText from "src/features/home/container/IntroText";
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col w-fit  relative bg-tertiary dark:bg-slate-900">
+    <div className="flex flex-col w-fit  relative bg-tertiary dark:bg-slate-900  scrollbar-thumb-black">
       <div>
         <IntroText />
         <AvatarGrid />

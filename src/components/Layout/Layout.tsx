@@ -46,9 +46,9 @@ export default function Layout({ handleChange, theme, children }: LayoutProps) {
           <ReactSwitch
             onChange={handleChange}
             checked={theme === "dark"}
-            onColor="#00DBDE"
-            height={22}
-            onHandleColor="#FC00FF"
+            onColor="#ffffff"
+            height={20}
+            onHandleColor="#725BFF"
             uncheckedIcon={<p className="grid place-content-center">🌑</p>}
             checkedIcon={<p>🌞</p>}
           />
@@ -65,7 +65,7 @@ export default function Layout({ handleChange, theme, children }: LayoutProps) {
           <Button
             handleClick={handleCartClose}
             text="CLOSE CART"
-            className=" w-4/12 ml-1 mt-2 font-bold dark:text-slate-100 py-4"
+            className=" w-4/12 ml-1 mt-2 font-bold dark:text-slate-100 py-4 "
           />
           <CartList />
         </div>
