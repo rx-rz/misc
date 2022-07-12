@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import CartCounter from "src/components/Counter/CartCounter";
 import Counter from "src/components/Counter/Counter";
 import { useStateContext } from "src/context/count-context";
 type ProductSettingsProps = {

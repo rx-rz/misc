@@ -1,6 +1,7 @@
 export type ProductProps = {
     name: string,
-    price: number
+    price: number,
+    quantity: number,
 }
 
 type Pro = {

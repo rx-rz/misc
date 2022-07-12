@@ -61,7 +61,7 @@ export default function Layout({ handleChange, theme, children }: LayoutProps) {
       </Header>
       <div className="relative">
         <div>{children}</div>
-        <div className="right-0 z-50 bg-slate-100 border-2 border-black dark:bg-gray-900 dark:border-primary fixed top-12" ref={cartRef}>
+        <div className="right-0 z-50 bg-slate-100 border-2 border-black dark:bg-gray-900 dark:border-primary fixed top-0" ref={cartRef}>
           <Button
             handleClick={handleCartClose}
             text="CLOSE CART"

@@ -9,27 +9,26 @@ export default function CartList() {
 
   return (
     <div
-      className="flex flex-col align-middle w-smallWidth md:w-mediumWidth lg:w-96 h-cartHeight overflow-y-auto "
+      className="flex flex-col align-middle w-smallWidth md:w-mediumWidth lg:w-96 h-screen overflow-y-auto "
       ref={cartRef}
     >
       <div>
         {cartItems.map((cartItem: ProductProps) => (
-          <CartItem
-            name={cartItem.name}
-            price={cartItem.price}
-            key={cartItem.name}
-          />
+          <div key={cartItem.name}>
+            <CartItem name={cartItem.name} price={cartItem.price} quantity={cartItem.quantity}/>
+          </div>
         ))}
       </div>
-        <h1 className="dark:text-slate-100 font-extrabold text-2xl w-fit mx-auto mt-4" >Total Price: ${totalPrice}</h1>
-        <Button
-          handleClick={() => console.log("sup")}
-          className={
-            "bg-secondary text-lg w-11/12 m-auto mt-4 mb-2 text-white font-bold py-1 transition-colors duration-300 hover:bg-primary hover:text-black"
-          }
-          text="Proceed To Checkout"
-        />
-
+      <h1 className="dark:text-slate-100 font-extrabold text-2xl w-fit mx-auto mt-4">
+        Total Price: ${totalPrice}
+      </h1>
+      <Button
+        handleClick={() => console.log("sup")}
+        className={
+          "bg-secondary text-lg w-11/12 m-auto mt-4 mb-2 text-white font-bold py-1 transition-colors duration-300 hover:bg-primary hover:text-black"
+        }
+        text="Proceed To Checkout"
+      />
     </div>
   );
 }
