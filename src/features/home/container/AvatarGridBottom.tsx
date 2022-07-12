@@ -7,7 +7,7 @@ export default function AvatarGridBottom() {
   return (
     <div className="w-full grid items-center py-8">
       <Marquee>ALL AVAILABLE AVATARS ✌</Marquee>
-      <div className="flex flex-wrap basis-7 md:basis-12 justify-center py-20 sm:py-10">
+      <div className="flex flex-wrap basis-7 md:basis-12 justify-center py-20 sm:py-20">
         {ProductsOne.map((product, index) => (
           <Link to={`/${product.name}/${product.price}`} className="m-12" key={index}>
             <ProductCard
