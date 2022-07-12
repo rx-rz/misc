@@ -2,7 +2,7 @@ import React from "react";
 import SmallerProductCard from "src/components/Card/SmallerProductCard";
 import { getProductImagesForProductDisplay } from "../api/getProductImagesForProductDisplay";
 
-const promptUrls = ["zenitsu", "inosuke", "tanjiro", "tenzin"];
+const promptUrls = ["ogbeni", "inosuke", "tanjiro", "tenzin"];
 type ProductImagesProps = {
   name: string | undefined
   changeImageName: (name: string) => void;

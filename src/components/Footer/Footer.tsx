@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="h-52 sm:h-96 dark:bg-gray-900 flex">
-      <div className="text-2xl sm:text-5xl flex flex-col justify-center w-1/2 text-center dark:text-white ">
+    <footer className="h-fit  dark:bg-gray-900  px-3 pb-6 sm:pb-8">
+      <Link to='/' className="font-bold text-4xl text-primary">MISCavatars</Link>
+
+      <div className="text-2xl  sm:w-5/12 md:w-4/12 flex w-10/12 justify-between text-center dark:text-white ">
         <a href="https://www.twitter.com/temiloluwa_js" className="my-2 transition-colors duration-300 hover:text-blue-600">
           Twitter
         </a>
@@ -15,7 +17,6 @@ export default function Footer() {
           Reddit
         </a>
       </div>
-      <div className="text-5xl font-extrabold grid place-content-center gradient w-1/2 sm:text-7xl"> <Link to="/"> MISC</Link></div>
 
       {/* <div className="w-1/2 flex flex-col text-2xl sm:text-5xl m-32">
         <a href="https://www.twitter.com/temiloluwa_js">Twitter</a>

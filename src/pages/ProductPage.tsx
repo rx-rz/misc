@@ -1,6 +1,5 @@
-import React, { useLayoutEffect, useState } from 'react'
+import { useLayoutEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import Counter from 'src/components/Counter/Counter'
 import ProductDisplay from 'src/features/product/container/ProductDisplay'
 import ProductImages from 'src/features/product/container/ProductImages'
 import ProductSettings from 'src/features/product/container/ProductSettings'

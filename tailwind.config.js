@@ -8,9 +8,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#00DBDE",
-        secondary: "#FC00FF",
-        // tertiary: "#2B86C5" 
+        primary: "#725BFF",
+        secondary: "#A4A4FF",
+        tertiary: "#ffffff" 
       },
       height: {
         maximalHeight: "calc(100vh - 3rem)",
@@ -25,7 +25,8 @@ module.exports = {
         mediumWidth: "60vw"
       },
       fontFamily: {
-        Poppins: ["Poppins, sans-serif"]
+        Poppins: ["Poppins, sans-serif"],
+        AlbertSans: ["Albert Sans, sans-serif"]
       },
       fontSize: {
         magicNo: "25.5vw"

@@ -4,7 +4,7 @@ import { getImage } from "../api/getImage";
 
 export default function AvatarGrid() {
   return (
-    <div className="flex flex-wrap  md:basis-2 justify-center py-4 sm:py-8">
+    <div className="flex  flex-wrap  md:basis-2 justify-center py-4 sm:py-8">
       <Link to={"/big-ears/100"} className="m-12 ">
         <ProductCard
           imageUrl={getImage("big-ears")}

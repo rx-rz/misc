@@ -34,13 +34,13 @@ export default function Layout({ handleChange, theme, children }: LayoutProps) {
   };
 
   return (
-    <div className="dark:bg-gray-900  w-full ">
+    <div className="dark:bg-gray-900  w-full bg-tertiary">
       <Header>
         <NavLink
-          className="  font-extrabold text-transparent  bg-gradient-to-r from-primary via-secondary to-tertiary bg-clip-text text-xl md:text-3xl"
+          className="font-medium text-primary dark:text-white text-xl md:text-3xl"
           to="/"
         >
-          MISC
+          MISC<span>avatars</span>
         </NavLink>
         <div>
           <ReactSwitch
