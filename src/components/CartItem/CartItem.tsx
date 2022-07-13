@@ -5,11 +5,11 @@ import { useStateContext } from "src/context/count-context";
 export default function CartItem({ name, price, quantity }: ProductProps) {
   const { toggleCartItemQuantity, removeItem } = useStateContext();
   return (
-    <div className="w-11/12 m-auto h-fit  border-2 border-primary py-3 my-2 flex font-AlbertSans justify-between dark:text-slate-50 dark:border-primary items-center">
+    <div className="w-11/12 m-auto h-fit  border-2 rounded-md border-primary py-3 my-2 flex font-AlbertSans justify-between dark:text-slate-50 dark:border-primary items-center">
       <img src={getImage(name)} alt={name} className="w-4/12 h-24 mr-4" />
       <aside className="w-8/12">
         <div>
-          <h1 className="font-bold text-xl ">{name}</h1>
+          <h1 className="font-bold text-2xl ">{name}</h1>
           <h2 className="gradient font-bold text-lg">{price}</h2>
         </div>
         <div>

@@ -15,10 +15,6 @@ type LayoutProps = {
 /**The Navbar Component accepts 3 link items as children and justifies them evenly */
 export default function Layout({ handleChange, theme, children }: LayoutProps) {
 
-  const product = {
-    name: "Micah",
-    price: "19"
-  }
   const location = useLocation()
 
   /**Upon change in location, the cart closes if it is */
@@ -28,14 +24,17 @@ export default function Layout({ handleChange, theme, children }: LayoutProps) {
 
   const { totalQuantities } = useStateContext();
   const cartRef = useRef<HTMLDivElement>(null);
+  const bodyRef = useRef<HTMLDivElement>(null)
   const handleCartClose = () => {
     cartRef.current!.style.display = "none";
+    bodyRef.current!.style.opacity = "1"
   };
 
-  const handleCartOpenOrClose = () => {
+  const handleCartOpen = () => {
     cartRef.current!.style.display === "none"
-      ? (cartRef.current!.style.display = "block")
-      : (cartRef.current!.style.display = "none");
+     && (cartRef.current!.style.display = "block")
+     bodyRef.current!.style.opacity = "0.3"
+
   };
 
   return (
@@ -61,21 +60,20 @@ export default function Layout({ handleChange, theme, children }: LayoutProps) {
           />
           <Button
             className="dark:text-white text-sm md:text-lg font-bold ml-2"
-            handleClick={handleCartOpenOrClose}
+            handleClick={handleCartOpen}
             text={`CART[${totalQuantities}]`}
           />
         </div>
       </Header>
       <div className="relative">
-        <div>{children}</div>
-        <div className="right-0 z-50 bg-slate-100 border-2 border-black dark:bg-gray-900 dark:border-primary fixed top-0" ref={cartRef}>
+        <div ref={bodyRef}>{children}</div>
+        <div className="right-0 z-50  bg-white shadow-sm border-black border-2 dark:bg-gray-900 dark:border-primary fixed top-0" ref={cartRef}>
           <Button
             handleClick={handleCartClose}
             text="CLOSE CART"
             className=" w-4/12 ml-1 mt-2 font-bold dark:text-slate-100 py-4"
           />
           <CartList />
-          <PaypalCheckOutButton product={product} />
         </div>
       </div>
     </div>

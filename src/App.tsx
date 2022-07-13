@@ -7,6 +7,7 @@ import Footer from "./components/Footer/Footer";
 import Layout from "./components/Layout/Layout";
 import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
+import Checkout from "./features/checkout/Checkout";
 
 export default function App() {
   const [theme, setTheme] = useState("light");
@@ -26,6 +27,7 @@ export default function App() {
               <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/:name/:price" element={<ProductPage />} />
+                <Route path="/checkout" element={<Checkout/>}/>
               </Routes>
               <Footer />
             </Layout>

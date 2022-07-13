@@ -28,12 +28,12 @@ export default function ProductSettings({ name, price }: ProductSettingsProps) {
         <p className="text-3xl font-medium md:text-4xl lg:text-5xl dark:text-white mb-4 w-5/6 m-auto">
           ${price}
         </p>
-        <div className="w-5/6 m-auto">
+        {/* <div className="w-5/6 m-auto">
           <Counter />
-        </div>
+        </div> */}
       </div>
       <div className="w-11/12 ">
-        <div className="w-5/6 m-auto">
+        <div className="w-10/12 m-auto">
           <button
             className="left-0 my-3  font-extrabold bg-primary  p-1 transition-transform duration-300 text-white  w-3/5 sm:w-2/5 font-AlbertSans hover:-translate-y-2"
             onClick={() => onAdd(product, quantity)}

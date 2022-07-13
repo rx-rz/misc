@@ -1,49 +1,50 @@
 import React, { useState } from "react";
 import { PayPalButtons } from "@paypal/react-paypal-js";
-export default function PaypalCheckOutButton({ product }) {
-    const [paidFor, setPaidFor] = useState(false)
+import { useStateContext } from "src/context/count-context";
+export default function PaypalCheckOutButton() {
+  const { totalPrice } = useStateContext();
+  const [paidFor, setPaidFor] = useState(false);
 
-    const handleApprove = (orderID) => {
-        setPaidFor(true)
-    }
+  const handleApprove = (orderID) => {
+    setPaidFor(true);
+  };
 
-    if(paidFor){
-        alert("Paid!")
-    }
+  if (paidFor) {
+    alert("Paid!");
+  }
   return (
-    <PayPalButtons
-    
-      style={{
-        shape: "pill",
-        color: "silver",
-        tagline: "false",
-      }}
-      createOrder={(data, actions) => {
-        return actions.order.create({
+    <div>
+      <PayPalButtons
+        style={{
+          shape: "rect",
+          color: "blue",
+          tagline: "false",
+          layout: "vertical",
+          label: "buynow",
+        }}
+        createOrder={(data, actions) => {
+          return actions.order.create({
             purchase_units: [
-                {
-                     
-                }
-            ]
-        })
-      }}
+              {
+                amount: {
+                  value: totalPrice,
+                },
+              },
+            ],
+          });
+        }}
+        onApprove={async (data, actions) => {
+          const order = await actions.order.capture();
+          console.log("order", order);
 
+          handleApprove(data.orderID);
+        }}
+        onError={(err) => {
+          alert(err);
+        }}
 
-
-      onApprove={async(data, actions) => {
-        const order = await actions.order.capture();
-        console.log("order", order)
-
-        handleApprove(data.orderID)
-      }}
-
-      onError={(err) => {
-        alert(err)
-      }}
-
-      onCancel={() => {
-        console.log("cancelled")
-      }}
-    />
+        //   onCancel=(())
+      />
+    </div>
   );
 }
