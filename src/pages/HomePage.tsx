@@ -1,3 +1,4 @@
+
 import AvatarGrid from "src/features/home/container/AvatarGrid";
 import AvatarGridBottom from "src/features/home/container/AvatarGridBottom";
 import DescriptionText from "src/features/home/container/DescriptionText";

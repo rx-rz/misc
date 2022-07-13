@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useLayoutEffect, useState } from "react";
 import { createContext } from "react";
+import toast from "react-hot-toast";
 
 const StateContext = createContext();
 export const StateContextProvider = ({ children }) => {
@@ -12,15 +13,19 @@ export const StateContextProvider = ({ children }) => {
   const [quantity, setQuantity] = useState(1);
 
   useLayoutEffect(() => {
-    setTotalQuantities(cartItems.length)
-    localStorage.setItem("cart", JSON.stringify(cartItems))
-    let price = 0
-    for (const i of cartItems){
-      price += (i.price * i.quantity)
-    }
-    setTotalPrice(price)
+    setTotalQuantities(cartItems.length);
   }, [cartItems]);
 
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cartItems));
+    let price = 0;
+    for (const i of cartItems) {
+      price += i.price * i.quantity;
+    }
+    setTotalPrice(price);
+  }, [cartItems]);
+
+  const sucessToast = () => toast("Item sucessfully added to cart 💹");
   const onAdd = (product, quantity) => {
     // localStorage.clear()
     // setCartItems([])
@@ -28,6 +33,7 @@ export const StateContextProvider = ({ children }) => {
     const exist = cartItems.find((item) => item.name === product.name);
     if (!exist) {
       setCartItems([...cartItems, { ...product, quantity: quantity }]);
+      sucessToast();
     } else {
       const updatedCartItems = cartItems.map((cartItem) =>
         cartItem.name === product.name
@@ -35,6 +41,7 @@ export const StateContextProvider = ({ children }) => {
           : cartItem
       );
       setCartItems(updatedCartItems);
+      sucessToast();
     }
   };
 
@@ -68,12 +75,12 @@ export const StateContextProvider = ({ children }) => {
         setCartItems(updatedCartItems);
       }
     }
-  }
+  };
 
   const removeItem = (name) => {
-    const newCartItems = cartItems.filter((item) => item.name !== name)
-    setCartItems(newCartItems)
-  }
+    const newCartItems = cartItems.filter((item) => item.name !== name);
+    setCartItems(newCartItems);
+  };
   return (
     <StateContext.Provider
       value={{
@@ -86,7 +93,7 @@ export const StateContextProvider = ({ children }) => {
         decreaseQuantity,
         onAdd,
         toggleCartItemQuantity,
-        removeItem
+        removeItem,
       }}
     >
       {children}

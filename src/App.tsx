@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { StateContextProvider } from "src/context/count-context.js";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
-
 import Footer from "./components/Footer/Footer";
 import Layout from "./components/Layout/Layout";
 import HomePage from "./pages/HomePage";

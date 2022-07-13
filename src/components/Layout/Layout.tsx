@@ -5,7 +5,7 @@ import CartList from "src/features/cart/CartList";
 import Button from "../Button/Button";
 import { useEffect, useRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import PaypalCheckOutButton from "../Checkout/PaypalCheckOutButton";
+import { Toaster } from "react-hot-toast";
 type LayoutProps = {
   handleChange: () => void;
   theme: string;
@@ -14,28 +14,28 @@ type LayoutProps = {
 
 /**The Navbar Component accepts 3 link items as children and justifies them evenly */
 export default function Layout({ handleChange, theme, children }: LayoutProps) {
-
-  const location = useLocation()
+  const location = useLocation();
 
   /**Upon change in location, the cart closes if it is */
   useEffect(() => {
-    handleCartClose()
-  }, [location])
+    handleCartClose();
+  }, [location]);
 
   const { totalQuantities } = useStateContext();
   const cartRef = useRef<HTMLDivElement>(null);
-  const bodyRef = useRef<HTMLDivElement>(null)
+  const bodyRef = useRef<HTMLDivElement>(null);
   const handleCartClose = () => {
     cartRef.current!.style.display = "none";
-    bodyRef.current!.style.opacity = "1"
+    bodyRef.current!.style.opacity = "1";
   };
 
   const handleCartOpen = () => {
-    cartRef.current!.style.display === "none"
-     && (cartRef.current!.style.display = "block")
-     bodyRef.current!.style.opacity = "0.3"
-
+    cartRef.current!.style.display === "none" &&
+      (cartRef.current!.style.display = "block");
+    bodyRef.current!.style.opacity = "0.3";
   };
+
+
 
   return (
     <div className="dark:bg-gray-900  w-full bg-tertiary">
@@ -66,8 +66,14 @@ export default function Layout({ handleChange, theme, children }: LayoutProps) {
         </div>
       </Header>
       <div className="relative">
-        <div ref={bodyRef}>{children}</div>
-        <div className="right-0 z-50  bg-white shadow-sm border-black border-2 dark:bg-gray-900 dark:border-primary fixed top-0" ref={cartRef}>
+        <div ref={bodyRef}>
+          <div><Toaster/></div>
+          <div>{children}</div>
+        </div>
+        <div
+          className="right-0 z-50  bg-white shadow-sm border-black border-2 dark:bg-gray-900 dark:border-primary fixed top-0"
+          ref={cartRef}
+        >
           <Button
             handleClick={handleCartClose}
             text="CLOSE CART"
