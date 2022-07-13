@@ -28,9 +28,7 @@ module.exports = {
         Poppins: ["Poppins, sans-serif"],
         AlbertSans: ["Albert Sans, sans-serif"]
       },
-      fontSize: {
-        magicNo: "25.5vw"
-      },
+
     },
   },
   plugins: [

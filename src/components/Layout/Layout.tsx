@@ -5,6 +5,7 @@ import CartList from "src/features/cart/CartList";
 import Button from "../Button/Button";
 import { useEffect, useRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
+import PaypalCheckOutButton from "../Checkout/PaypalCheckOutButton";
 type LayoutProps = {
   handleChange: () => void;
   theme: string;
@@ -14,6 +15,10 @@ type LayoutProps = {
 /**The Navbar Component accepts 3 link items as children and justifies them evenly */
 export default function Layout({ handleChange, theme, children }: LayoutProps) {
 
+  const product = {
+    name: "Micah",
+    price: "19"
+  }
   const location = useLocation()
 
   /**Upon change in location, the cart closes if it is */
@@ -70,6 +75,7 @@ export default function Layout({ handleChange, theme, children }: LayoutProps) {
             className=" w-4/12 ml-1 mt-2 font-bold dark:text-slate-100 py-4"
           />
           <CartList />
+          <PaypalCheckOutButton product={product} />
         </div>
       </div>
     </div>
