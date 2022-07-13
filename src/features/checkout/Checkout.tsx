@@ -3,14 +3,10 @@ import PaypalCheckOutButton from "src/components/Checkout/PaypalCheckOutButton";
 import { useStateContext } from "src/context/count-context";
 import { ProductProps } from "src/types/Product";
 import CartItem from "src/components/CartItem/CartItem";
-import toast from "react-hot-toast";
 export default function Checkout() {
   const { cartItems, totalPrice } = useStateContext();
-  const notify = () => toast('Here is your toast.');
   return (
     <div className="w-full md:w-9/12 lg:w-7/12  mx-auto mt-12 min-h-maximalHeight md:min-h-screen">
-
-      <button onClick={notify}>Toast</button>
       <p className="text-4xl font-bold dark:text-primary ml-4 mt-4 mb-8">Cart Items</p>
       <div className="md:flex">
         <aside className="md:w-1/2 md:block ">
