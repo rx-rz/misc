@@ -19,7 +19,7 @@ export default function App() {
     <div
       className={`dark:bg-gray-900 font-Poppins dark:text-white m-0 bg-slate-100 ${theme}`}
     >
-      <PayPalScriptProvider options={{"client-id": "AVK0UYz2rvbeLW2w9LdWYip6pQkSg-3SjNgR-l14IUJuXW7oeD1ZYkaguJCKllxe7sBhEYaP-biBoTwQ" }}>
+      <PayPalScriptProvider options={{"client-id": "AVK0UYz2rvbeLW2w9LdWYip6pQkSg-3SjNgR-l14IUJuXW7oeD1ZYkaguJCKllxe7sBhEYaP-biBoTwQ", }}>
         <StateContextProvider>
           <Router>
             <Layout handleChange={toggleTheme} theme={theme}>

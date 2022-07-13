@@ -1,35 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import { PayPalButtons } from "@paypal/react-paypal-js";
 export default function PaypalCheckOutButton({ product }) {
+    const [paidFor, setPaidFor] = useState(false)
+
     const handleApprove = (orderID) => {
-        
+        setPaidFor(true)
+    }
+
+    if(paidFor){
+        alert("Paid!")
     }
   return (
     <PayPalButtons
+    
       style={{
         shape: "pill",
         color: "silver",
         tagline: "false",
-        layout: "horizontal",
-        height: 40,
       }}
       createOrder={(data, actions) => {
         return actions.order.create({
             purchase_units: [
                 {
-                    description: product.description,
-                    amount: {
-                        value: product.price
-                    }
+                     
                 }
             ]
         })
       }}
+
+
+
       onApprove={async(data, actions) => {
         const order = await actions.order.capture();
         console.log("order", order)
 
         handleApprove(data.orderID)
+      }}
+
+      onError={(err) => {
+        alert(err)
+      }}
+
+      onCancel={() => {
+        console.log("cancelled")
       }}
     />
   );
