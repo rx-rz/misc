@@ -25,19 +25,23 @@ export const StateContextProvider = ({ children }) => {
     setTotalPrice(price);
   }, [cartItems]);
 
-  const sucessToast = () => toast("Item sucessfully added to cart 💹");
+  const sucessToast = () =>
+    toast.success("Item sucessfully added to cart", {
+      style: { borderRadius: 0, color: "#725BFF", backgroundColor: "#ffffff", border: '1px solid #725BFF' },
+      duration: 1500,
+    });
   const onAdd = (product, quantity) => {
     // localStorage.clear()
     // setCartItems([])
 
     const exist = cartItems.find((item) => item.name === product.name);
     if (!exist) {
-      setCartItems([...cartItems, { ...product, quantity: quantity }]);
+      setCartItems([...cartItems, { ...product, quantity:  1  }]);
       sucessToast();
     } else {
       const updatedCartItems = cartItems.map((cartItem) =>
         cartItem.name === product.name
-          ? { ...exist, quantity: quantity }
+          ? { ...exist, quantity: exist.quantity + 1}
           : cartItem
       );
       setCartItems(updatedCartItems);

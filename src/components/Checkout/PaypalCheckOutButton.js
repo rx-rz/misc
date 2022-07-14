@@ -3,15 +3,23 @@ import { PayPalButtons } from "@paypal/react-paypal-js";
 import { useStateContext } from "src/context/count-context";
 import toast from "react-hot-toast";
 export default function PaypalCheckOutButton() {
-  const { totalPrice, setCartItems} = useStateContext();
+  const { totalPrice, setCartItems } = useStateContext();
   const [paidFor, setPaidFor] = useState(false);
 
   const handleApprove = (orderID) => {
     setPaidFor(true);
   };
 
-  const successToast = () => toast("Purchase made! 💹")
-  const errorToast = () => toast("An error occured! ❌")
+  const successToast = () =>
+    toast.success("Purchase made!", {
+      style: { borderRadius: 0, color: "#725BFF", backgroundColor: "#ffffff" },
+      duration: 1500,
+    });
+  const errorToast = () =>
+    toast.error("An error occured! ❌", {
+      style: { borderRadius: 0, color: "#725BFF", backgroundColor: "#ffffff" },
+      duration: 1500,
+    });
 
   if (paidFor) {
     alert("Paid!");
@@ -41,12 +49,12 @@ export default function PaypalCheckOutButton() {
           const order = await actions.order.capture();
           console.log("order", order);
           handleApprove(data.orderID);
-          successToast()
-          localStorage.clear()
-          setCartItems([])
+          successToast();
+          localStorage.clear();
+          setCartItems([]);
         }}
         onError={(err) => {
-          errorToast()
+          errorToast();
         }}
 
         //   onCancel=(())
