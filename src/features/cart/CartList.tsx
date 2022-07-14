@@ -32,7 +32,7 @@ export default function CartList() {
           <div className="flex justify-center">
             <Link
               to="/checkout"
-              className="bg-primary text-lg w-11/12 mx-auto mt-4 font-AlbertSans text-black font-bold pt-1 mb-4 transition-colors duration-300 text-center  hover:text-white"
+              className="bg-primary text-lg w-11/12 mx-auto mt-4 font-AlbertSans text-black font-bold pt-1 mb-4 py-2 transition-colors duration-300 text-center  hover:text-white"
             >
               Proceed To Checkout
             </Link>

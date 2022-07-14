@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import ProductCard from "src/components/Card/ProductCard";
+import ProductCard from "src/components/Card/ProductCard/ProductCard";
 import Marquee from "src/components/Marquee/Marquee";
 import { getImage } from "../api/getImage";
 import { ProductsOne } from "../api/productsOne";

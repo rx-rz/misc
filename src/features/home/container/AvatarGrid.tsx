@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import ProductCard from "src/components/Card/ProductCard";
+import ProductCard from "src/components/Card/ProductCard/ProductCard";
 import { getImage } from "../api/getImage";
 
 export default function AvatarGrid() {
