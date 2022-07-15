@@ -1,11 +1,13 @@
+import React, { useEffect, useRef } from "react";
 import Header from "../Header/Header";
 import ReactSwitch from "react-switch";
 import { useStateContext } from "src/context/count-context";
-import CartList from "src/features/cart/CartList";
-import Button from "../Button/Button";
-import { useEffect, useRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
+const CartList = React.lazy(() => import('src/features/cart/CartList'))
+const Button = React.lazy(() => import('../Button/Button'))
+// const Header = React.lazy(() => import('../Header/Header'))
+
 type LayoutProps = {
   handleChange: () => void;
   theme: string;

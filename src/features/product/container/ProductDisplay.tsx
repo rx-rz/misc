@@ -8,6 +8,7 @@ export default function ProductDisplay({ imageType, imageName }: ProductDisplayP
   return (
     <div className='md:w-5/12 rounded-b-xl'>
       <img
+      
         className="object-center object-cover md:h-maximalHeight rounded-b-3xl md:rounded-none"
         src={getProductImages(imageType, imageName)}
         alt={imageType}
