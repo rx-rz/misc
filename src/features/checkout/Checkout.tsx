@@ -1,8 +1,7 @@
-import React from "react";
-import PaypalCheckOutButton from "src/components/Checkout/PaypalCheckOutButton";
+import {PaypalCheckOutButton} from "src/components/Checkout";
 import { useStateContext } from "src/context/count-context";
 import { ProductProps } from "src/types/Product";
-import CartItem from "src/components/CartItem/CartItem";
+import {CartItem} from "src/components/CartItem";
 export default function Checkout() {
   const { cartItems, totalPrice } = useStateContext();
   return (

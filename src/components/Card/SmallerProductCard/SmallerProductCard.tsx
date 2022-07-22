@@ -1,10 +1,10 @@
-import React from 'react'
+
 type CardProps = {
     name?: string,
     price?: number,
     imageUrl: string,
 }
-export default function SmallerProductCard({name, price, imageUrl}: CardProps) {
+export  function SmallerProductCard({name, price, imageUrl}: CardProps) {
   return (
     <div className='w-14 md:w-24  lg:w-36 mt-4 transition-transform hover:-translate-y-2'>
         <img className='w-fit transition-shadow duration-300 hover:shadow-secondary shadow-2xl' alt={name} src={imageUrl}/>

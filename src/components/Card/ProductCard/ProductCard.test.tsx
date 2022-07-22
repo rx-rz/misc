@@ -3,7 +3,7 @@
 // import App from './App';
 
 import { render, screen } from "@testing-library/react";
-import ProductCard from "./ProductCard";
+import {ProductCard} from "./ProductCard";
 
 test("renders correct product name and price", () => {
   render(

@@ -1,5 +1,5 @@
 import React from "react";
-import SmallerProductCard from "src/components/Card/SmallerProductCard/SmallerProductCard";
+import {SmallerProductCard} from "src/components/Card/";
 import { getProductImagesForProductDisplay } from "../api/getProductImagesForProductDisplay";
 
 const promptUrls = ["ogbeni", "inosuke", "tanjiro", "tenzin"];

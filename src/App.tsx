@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { StateContextProvider } from "src/context/count-context.js";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import Layout from "./components/Layout/Layout";
-import Footer from "./components/Footer/Footer";
+import {Footer} from "./components/Footer";
 
 // const Footer = React.lazy(() => import("./components/Footer/Footer"));
 const HomePage = React.lazy(() => import("./pages/HomePage"))

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { getImage } from "../api/getImage";
 import { ProductsOne } from "../api/productsOne";
 
-const ProductCard = React.lazy(() => import('src/components/Card/ProductCard/ProductCard'))
+const ProductCard = React.lazy(() => import('src/components/Card/ProductCard'))
 const Marquee = React.lazy(() => import( "src/components/Marquee/Marquee"));
 export default function AvatarGridBottom() {
   return (

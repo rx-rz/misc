@@ -7,8 +7,6 @@ import ProductSettings from 'src/features/product/container/ProductSettings'
 export default function ProductPage() {
     const {name} = useParams()
     const {price} = useParams()
-
-    
     const [imageName, setImageName] = useState("korra")
 
     function changeImageName(name: string) {

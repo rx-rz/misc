@@ -1,7 +1,6 @@
-import React, { useRef } from "react";
+import{ useRef } from "react";
 import { Link } from "react-router-dom";
-import Button from "src/components/Button/Button";
-import CartItem from "src/components/CartItem/CartItem";
+import {CartItem} from "src/components/CartItem";
 import { useStateContext } from "src/context/count-context";
 import { ProductProps } from "src/types/Product";
 export default function CartList() {

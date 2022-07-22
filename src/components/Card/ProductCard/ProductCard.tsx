@@ -1,11 +1,10 @@
-import React from 'react'
 type CardProps = {
     name?: string,
     price?: number,
 
     imageUrl: string
 }
-export default function ProductCard({name, price, imageUrl}: CardProps) {
+export  function ProductCard({name, price, imageUrl}: CardProps) {
   return (
     <div  className='w-32 sm:w-22 md:w-44 lg:w-80 transition-all duration-300 hover:translate-x-3 hover:-translate-y-3  hover:shadow-xl shadow-black'>
         <img data-testid="product-image" className='w-fit transition-shadow duration-300 hover:shadow-secondary ' alt={name} src={imageUrl}/>

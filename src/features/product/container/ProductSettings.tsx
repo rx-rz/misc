@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import Counter from "src/components/Counter/Counter";
 import { useStateContext } from "src/context/count-context";
 type ProductSettingsProps = {
   name: string | undefined;

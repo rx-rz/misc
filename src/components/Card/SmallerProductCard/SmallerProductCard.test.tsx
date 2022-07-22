@@ -3,7 +3,7 @@
 // import App from './App';
 
 import { render, screen } from "@testing-library/react";
-import SmallerProductCard from "./SmallerProductCard";
+import {SmallerProductCard} from "./SmallerProductCard";
 
 // test('renders learn react link', () => {
 //   render(<App />);

@@ -1,8 +1,5 @@
-import React from 'react'
-import { useStateContext } from 'src/context/count-context'
-export default function CartCounter() {
+export  function CartCounter() {
 
-  const {quantity, decreaseQuantity, increaseQuantity} = useStateContext()
   return (
     <div>
 

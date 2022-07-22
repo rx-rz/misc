@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react'
-import Button from './Button';
+import {Button} from './Button';
 
 test('button contains a text and a class name', () => {
     let className: string = "py-2"
