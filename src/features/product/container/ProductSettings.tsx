@@ -16,6 +16,7 @@ export default function ProductSettings({ name, price }: ProductSettingsProps) {
   const product = {
     name: name,
     price: price,
+
   };
 
   return (
