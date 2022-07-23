@@ -1,9 +1,9 @@
 import { ProductProps } from "src/types/Product";
 import { getImage } from "src/features/home/api/getImage";
-import { useStateContext } from "src/context/count-context";
+import { useStateContext } from "src/context/countContext";
 
 export  function CartItem({ name, price, quantity }: ProductProps) {
-  const { toggleCartItemQuantity, removeItem } = useStateContext();
+  const { toggleCartItemQuantity, removeItem } = useStateContext()!;
   return (
     <div className="w-11/12 m-auto h-fit  border-2 rounded-md border-primary py-3 my-2 flex font-AlbertSans justify-between dark:text-slate-50 dark:border-primary items-center">
       <img src={getImage(name)} alt={name} className="w-4/12 h-24 mr-4" />

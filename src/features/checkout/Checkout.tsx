@@ -1,9 +1,9 @@
-import {PaypalCheckOutButton} from "src/components/Checkout";
-import { useStateContext } from "src/context/count-context";
+import { useStateContext } from "src/context/countContext";
+// import {PaypalCheckOutButton} from "src/components/Checkout";
 import { ProductProps } from "src/types/Product";
 import {CartItem} from "src/components/CartItem";
 export default function Checkout() {
-  const { cartItems, totalPrice } = useStateContext();
+  const { cartItems, totalPrice } = useStateContext()!
   return (
     <div className="w-full md:w-9/12 lg:w-7/12  mx-auto mt-12 min-h-maximalHeight md:min-h-screen">
       <p className="text-4xl font-bold dark:text-primary ml-4 mt-4 mb-8">Cart Items</p>
@@ -23,7 +23,7 @@ export default function Checkout() {
           </h1>
         </aside>
         <div className="md:w-1/2 w-11/12 mx-auto my-3  h-fit dark:bg-white p-2 rounded-md border-2 border-primary">
-          <PaypalCheckOutButton />
+          {/* <PaypalCheckOutButton /> */}
         </div>
       </div>
     </div>

@@ -1,14 +1,13 @@
 import React, { Suspense, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { StateContextProvider } from "src/context/count-context.js";
+import { StateContextProvider } from "./context/countContext";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import Layout from "./components/Layout/Layout";
-import {Footer} from "./components/Footer";
+import { Footer } from "./components/Footer";
 
-// const Footer = React.lazy(() => import("./components/Footer/Footer"));
-const HomePage = React.lazy(() => import("./pages/HomePage"))
-const ProductPage = React.lazy(() => import("./pages/ProductPage"))
-const Checkout = React.lazy(() => import('./features/checkout/Checkout'))
+const HomePage = React.lazy(() => import("./pages/HomePage"));
+const ProductPage = React.lazy(() => import("./pages/ProductPage"));
+const Checkout = React.lazy(() => import("./features/checkout/Checkout"));
 
 export default function App() {
   const [theme, setTheme] = useState("light");
@@ -22,7 +21,9 @@ export default function App() {
       className={`dark:bg-gray-900 font-Poppins dark:text-white m-0 bg-slate-100 ${theme}`}
     >
       <PayPalScriptProvider
-        options={{ "client-id": process.env.REACT_APP_PAYPAL_CLIENT_ID! }}
+        options={{
+          "client-id": process.env.REACT_APP_PAYPAL_CLIENT_ID!,
+        }}
       >
         <StateContextProvider>
           <Router>
@@ -31,6 +32,7 @@ export default function App() {
                 <Routes>
                   <Route path="/" element={<HomePage />} />
                   <Route path="/:name/:price" element={<ProductPage />} />
+
                   <Route path="/checkout" element={<Checkout />} />
                 </Routes>
               </Suspense>

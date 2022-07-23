@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import {Header} from "src/components/Header";
 import ReactSwitch from "react-switch";
-import { useStateContext } from "src/context/count-context";
+import { useStateContext } from "src/context/countContext";
 import { NavLink, useLocation } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import {Button} from 'src/components/Button'
@@ -22,7 +22,7 @@ export default function Layout({ handleChange, theme, children }: LayoutProps) {
     handleCartClose();
   }, [location]);
 
-  const { totalQuantities } = useStateContext();
+  const { totalQuantities } = useStateContext()!;
   const cartRef = useRef<HTMLDivElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
   const handleCartClose = () => {

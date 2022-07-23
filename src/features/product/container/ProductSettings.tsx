@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
-import { useStateContext } from "src/context/count-context";
+import { useStateContext } from "src/context/countContext";
 type ProductSettingsProps = {
-  name: string | undefined;
-  price: number | string | undefined;
+  name: string;
+  price: string | number;
 };
 
 export default function ProductSettings({ name, price }: ProductSettingsProps) {
-  const { onAdd, quantity, setQuantity } = useStateContext();
+  const { onAdd, quantity, setQuantity } = useStateContext()!;
   useEffect(() => {
     if (quantity) {
       setQuantity(1);
@@ -35,7 +35,7 @@ export default function ProductSettings({ name, price }: ProductSettingsProps) {
         <div className="w-10/12 m-auto">
           <button
             className="left-0 my-3  font-extrabold bg-primary  p-1 transition-transform duration-300 text-white  w-3/5 sm:w-2/5 font-AlbertSans hover:-translate-y-2"
-            onClick={() => onAdd(product, quantity)}
+            onClick={() => onAdd(product)}
           >
             ADD TO CART
           </button>

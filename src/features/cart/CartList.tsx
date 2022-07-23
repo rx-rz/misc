@@ -1,12 +1,11 @@
 import{ useRef } from "react";
 import { Link } from "react-router-dom";
 import {CartItem} from "src/components/CartItem";
-import { useStateContext } from "src/context/count-context";
+import { useStateContext } from "src/context/countContext";
 import { ProductProps } from "src/types/Product";
 export default function CartList() {
-  const { cartItems, totalPrice } = useStateContext();
+  const { cartItems, totalPrice } = useStateContext()!
   const cartRef = useRef<HTMLDivElement>(null);
-
   return (
     <div
       className="flex flex-col align-middle w-smallWidth md:w-mediumWidth lg:w-96 h-screen"
