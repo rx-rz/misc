@@ -7,3 +7,5 @@ export type ProductProps = {
 type Pro = {
     pro: string
 }
+
+

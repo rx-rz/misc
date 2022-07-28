@@ -5,7 +5,7 @@ type ButtonProps = {
 };
 export  function Button({ text, className, handleClick }: ButtonProps) {
   return (
-    <button onClick={handleClick} className={className}>
+    <button onClick={handleClick} className={className} data-testid="button">
       {text}
     </button>
   );
