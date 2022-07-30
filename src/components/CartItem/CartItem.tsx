@@ -3,7 +3,7 @@ import { getImage } from "src/features/home/api/getImage";
 import { useStateContext } from "src/context/countContext";
 
 export  function CartItem({ name, price, quantity }: ProductProps) {
-  const { toggleCartItemQuantity, removeItem } = useStateContext()!;
+  const { toggleCartItemQuantity, removeItemFromCart } = useStateContext()!;
   return (
     <div className="w-11/12 m-auto h-fit  border-2 rounded-md border-primary py-3 my-2 flex font-AlbertSans justify-between dark:text-slate-50 dark:border-primary items-center">
       <img src={getImage(name)} alt={name} className="w-4/12 h-24 mr-4" />
@@ -20,7 +20,7 @@ export  function CartItem({ name, price, quantity }: ProductProps) {
             >
               -
             </button>
-            <p className="border-2 px-2 border-black border-l-0 border-r-0 font-medium dark:text-white dark:border-primary sm:px-3 sm:py-1">
+            <p className="border-2 px-2 border-black border-l-0 border-r-0 font-medium dark:text-white dark:border-primary sm:px-3 sm:py-1" data-testid="quantity">
               {quantity}
             </p>
             <button
@@ -32,7 +32,7 @@ export  function CartItem({ name, price, quantity }: ProductProps) {
           </div>
         </div>
         <div>
-          <button onClick={() => removeItem(name)}>Remove Item</button>
+          <button onClick={() => removeItemFromCart(name)}>Remove Item</button>
         </div>
       </aside>
     </div>

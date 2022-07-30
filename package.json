@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@paypal/react-paypal-js": "^7.8.1",
+    "@square/web-sdk": "^2.0.1",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
@@ -17,6 +18,7 @@
     "react-hot-toast": "^2.3.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "react-square-web-payments-sdk": "^3.2.1",
     "react-switch": "^7.0.0",
     "source-map-explorer": "^2.5.2",
     "typescript": "^4.7.4",

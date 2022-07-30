@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { PayPalButtons } from "@paypal/react-paypal-js";
-import { useStateContext } from "src/context/count-context";
+import { useStateContext } from "src/context/countContext";
 import toast from "react-hot-toast";
 export function PaypalCheckOutButton() {
   const { totalPrice, setCartItems } = useStateContext();

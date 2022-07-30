@@ -21,9 +21,9 @@ type StateContextType = {
   totalQuantities: number;
   increaseQuantity: (product: number, quantity: number) => void;
   decreaseQuantity: (product: number, quantity: number) => void;
-  onAdd: (product: Product) => void;
+  onAddtoCart: (product: Product) => void;
   toggleCartItemQuantity: (name: string, value: string) => void;
-  removeItem: (name: string) => void;
+  removeItemFromCart: (name: string) => void;
 };
 
 type StateContextProviderProps = {
@@ -67,8 +67,8 @@ export const StateContextProvider = ({
       duration: 1500,
     });
 
-  const onAdd = (product: Product) => {
 
+  const onAddtoCart = (product: Product) => {
     const exist = cartItems.find((item: CartItem) => item.name === product.name);
     if (!exist) {
       setCartItems([...cartItems, { ...product, quantity: 1 }]);
@@ -84,9 +84,11 @@ export const StateContextProvider = ({
     }
   };
 
+
   const increaseQuantity = () => {
     setQuantity((prevQuantity) => prevQuantity + 1);
   };
+
 
   const decreaseQuantity = () => {
     setQuantity((prevQuantity) => {
@@ -97,14 +99,14 @@ export const StateContextProvider = ({
 
   const toggleCartItemQuantity = (name: string, value: string) => {
     let foundProduct = cartItems.find((item: CartItem) => item.name === name);
-    if (value === "inc") {
+    if (value === "increment") {
       const updatedCartItems = cartItems.map((cartItem: CartItem) =>
         cartItem.name === name
           ? { ...foundProduct, quantity: foundProduct.quantity + 1 }
           : cartItem
       );
       setCartItems(updatedCartItems);
-    } else if (value === "dec") {
+    } else if (value === "decrement") {
       if (foundProduct.quantity > 1) {
         const updatedCartItems = cartItems.map((cartItem: CartItem) =>
           cartItem.name === name
@@ -116,7 +118,7 @@ export const StateContextProvider = ({
     }
   };
 
-  const removeItem = (name: string) => {
+  const removeItemFromCart = (name: string) => {
     const newCartItems = cartItems.filter((item: CartItem) => item.name !== name);
     setCartItems(newCartItems);
   };
@@ -130,9 +132,9 @@ export const StateContextProvider = ({
         setQuantity,
         increaseQuantity,
         decreaseQuantity,
-        onAdd,
+        onAddtoCart,
         toggleCartItemQuantity,
-        removeItem,
+        removeItemFromCart,
       }}
     >
       {children}

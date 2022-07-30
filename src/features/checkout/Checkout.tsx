@@ -1,5 +1,4 @@
 import { useStateContext } from "src/context/countContext";
-// import {PaypalCheckOutButton} from "src/components/Checkout";
 import { ProductProps } from "src/types/Product";
 import {CartItem} from "src/components/CartItem";
 export default function Checkout() {
@@ -22,9 +21,6 @@ export default function Checkout() {
             Total Price: <span className="text-primary font-extrabold">${totalPrice}</span>
           </h1>
         </aside>
-        <div className="md:w-1/2 w-11/12 mx-auto my-3  h-fit dark:bg-white p-2 rounded-md border-2 border-primary">
-          {/* <PaypalCheckOutButton /> */}
-        </div>
       </div>
     </div>
   );

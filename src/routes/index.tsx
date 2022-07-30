@@ -1,12 +1,7 @@
-import React from 'react'
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import HomePage from '../pages/HomePage'
-export default function index() {
-  return (
-   <Router>
-    <Routes>
-        <Route element={<HomePage/>}/>
-    </Routes>
-   </Router>
-  )
+import { useRoutes } from "react-router-dom"
+import { publicRoutes } from "./public"
+
+export const AppRoutes = () => {
+  const element = useRoutes([...publicRoutes])
+  return <>{element}</>
 }

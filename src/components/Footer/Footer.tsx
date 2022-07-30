@@ -27,14 +27,6 @@ export function Footer() {
         {" "}
         <Link to="/"> MISC</Link>
       </div>
-      {/* <div className="w-1/2 flex flex-col text-2xl sm:text-5xl m-32">
-        <a href="https://www.twitter.com/temiloluwa_js">Twitter</a>
-        <a href="https://www.github.com/temiloluwa-js">Github</a>
-        <a href="https://www.github.com/temiloluwa-js">Reddit</a>
-      </div>
-      <div className="gradient m-32 sm:mt-96 font-extrabold w-1/2 sm:text-9xl grid place-content-center">
-        <p>MISC</p>
-      </div> */}
     </footer>
   );
 }

@@ -1,9 +1,10 @@
-
 type CardProps = {
-    name?: string,
-    price?: number,
-    imageUrl: string,
+  imageUrl: string,
+  name?: string,
+  price?: number,
+
 }
+
 export  function SmallerProductCard({name, price, imageUrl}: CardProps) {
   return (
     <div className='w-14 md:w-24  lg:w-36 mt-4 transition-transform hover:-translate-y-2'>
