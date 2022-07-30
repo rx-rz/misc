@@ -57,7 +57,6 @@ export function PaypalCheckOutButton() {
           errorToast();
         }}
 
-        //   onCancel=(())
       />
     </div>
   );
