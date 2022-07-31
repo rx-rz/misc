@@ -1,5 +1,7 @@
-import { ApplePay, CashAppPay, CreditCard, GooglePay, PaymentForm } from 'react-square-web-payments-sdk';
+import { CreditCard, GooglePay, PaymentForm } from 'react-square-web-payments-sdk';
 
+const appId = process.env.SQUARE_APPLICATION_ID
+const locId = process.env.SQUARE_LOCATION_ID
 const SquareCheckOutForm = ({totalPrice}) => (
   <PaymentForm
     /**

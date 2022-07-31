@@ -25,8 +25,8 @@ module.exports = {
         mediumWidth: "60vw"
       },
       fontFamily: {
-        Poppins: ["Albert Sans, sans-serif"],
-        AlbertSans: ["Chillax, sans-serif"]
+        Poppins: ["Poppins, sans-serif"],
+        AlbertSans: ["Albert Sans, sans-serif"]
       },
 
     },

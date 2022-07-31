@@ -5,11 +5,10 @@ import { useStateContext } from "src/context/countContext";
 import { ProductProps } from "src/types/Product";
 export default function CartList() {
   const { cartItems, totalPrice } = useStateContext()!
-  const cartRef = useRef<HTMLDivElement>(null);
+
   return (
     <div
-      className="flex flex-col align-middle w-smallWidth md:w-mediumWidth lg:w-96 h-screen"
-      ref={cartRef}
+      className="flex flex-col align-middle h-screen"
     >
       {cartItems.length > 0 ? (
         <div>
@@ -37,7 +36,7 @@ export default function CartList() {
           </div>
         </div>
       ) : (
-        <p className="w-5/6 mx-auto text-center text-2xl mt-8">
+        <p className="w-5/6 mx-auto text-center text-2xl mt-8 dark:text-white">
           You have not added any items to the cart. 😶
         </p>
       )}

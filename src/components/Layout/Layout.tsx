@@ -4,8 +4,8 @@ import ReactSwitch from "react-switch";
 import { useStateContext } from "src/context/countContext";
 import { NavLink, useLocation } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
-import { Button } from "src/components/Button";
-import cartlogo from 'src/assets/cart.svg'
+import close from 'src/assets/close.svg'
+import cartlogo from "src/assets/cart.svg";
 const CartList = React.lazy(() => import("src/features/cart/CartList"));
 
 type LayoutProps = {
@@ -47,6 +47,7 @@ export default function Layout({ handleChange, theme, children }: LayoutProps) {
         >
           MISC<span>avatars</span>
         </NavLink>
+
         <div className="flex items-center">
           <ReactSwitch
             onChange={handleChange}
@@ -59,9 +60,18 @@ export default function Layout({ handleChange, theme, children }: LayoutProps) {
             uncheckedIcon={<p className="grid place-content-center">🌑</p>}
             checkedIcon={<p>🌞</p>}
           />
-          <button onClick={handleCartOpen} className="flex items-center ml-3"><img src={cartlogo} alt="Cart" width="30px" className="mr-2 dark:invert"/><p className="font-bold dark:text-white">{totalQuantities}</p></button>
+          <button onClick={handleCartOpen} className="flex items-center ml-3">
+            <img
+              src={cartlogo}
+              alt="Cart"
+              width="30px"
+              className="mr-2 dark:invert"
+            />
+            <p className="font-bold dark:text-white">{totalQuantities}</p>
+          </button>
         </div>
       </Header>
+
       <div className="relative">
         <div ref={bodyRef}>
           <div>
@@ -70,15 +80,13 @@ export default function Layout({ handleChange, theme, children }: LayoutProps) {
           <div>{children}</div>
         </div>
         <div
-          className="right-0 z-50  bg-white shadow-sm border-black border-2 dark:bg-gray-900 dark:border-primary fixed top-0"
+          className="right-0 z-50  bg-slate-100 shadow-sm sm:w-5/12 dark:bg-slate-900  fixed top-0 overflow-x-hidden overflow-y-scroll bottom-0 m-auto"
           ref={cartRef}
         >
-          <Button
-            handleClick={handleCartClose}
-            text="CLOSE CART"
-            className=" w-4/12 ml-1 mt-2 font-bold dark:text-slate-100 py-4"
-          />
-          <CartList />
+          <div className="w-10/12 m-auto">
+            <button onClick={handleCartClose} className="my-8 dark:invert"><img src={close} alt="Close" width="30px" title="Close Cart"/></button>
+            <CartList />
+          </div>
         </div>
       </div>
     </div>
