@@ -1,4 +1,3 @@
-import{ useRef } from "react";
 import { Link } from "react-router-dom";
 import {CartItem} from "src/components/CartItem";
 import { useStateContext } from "src/context/countContext";
