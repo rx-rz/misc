@@ -6,7 +6,7 @@ import close from 'src/assets/close.svg'
 export function CartItem({ name, price, quantity }: ProductProps) {
   const { toggleCartItemQuantity, removeItemFromCart } = useStateContext()!;
   return (
-    <div className="w-full  m-auto border-l-2 my-8 flex font-AlbertSans justify-between dark:text-slate-50   border-l-primary items-center ">
+    <div className="w-full  m-auto border-b-2 my-4 pb-4 flex font-AlbertSans justify-between dark:text-slate-50   border-b-primary items-center ">
       <img src={getImage(name)} alt={name} className="w-4/12 h-24 mr-4" />
       <aside className="w-8/12 flex justify-between h-full">
         <div className="w-6/12">

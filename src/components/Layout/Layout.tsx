@@ -80,7 +80,7 @@ export default function Layout({ handleChange, theme, children }: LayoutProps) {
           <div>{children}</div>
         </div>
         <div
-          className="right-0 z-50  bg-slate-100 shadow-sm sm:w-7/12 w-11/12 dark:bg-slate-900  fixed top-0 overflow-x-hidden overflow-y-scroll bottom-0 m-auto"
+          className="right-0 z-50  bg-slate-100 shadow-sm sm:w-7/12 md:w-6/12  w-11/12 dark:bg-slate-900  fixed top-0 overflow-x-hidden overflow-y-scroll bottom-0 m-auto"
           ref={cartRef}
         >
           <div className="w-10/12 m-auto">
