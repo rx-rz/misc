@@ -5,6 +5,7 @@ import { useStateContext } from "src/context/countContext";
 import { NavLink, useLocation } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import { Button } from "src/components/Button";
+import cartlogo from 'src/assets/cart.svg'
 const CartList = React.lazy(() => import("src/features/cart/CartList"));
 
 type LayoutProps = {
@@ -41,28 +42,24 @@ export default function Layout({ handleChange, theme, children }: LayoutProps) {
     <div className="dark:bg-gray-900  w-full bg-tertiary">
       <Header>
         <NavLink
-          className="font-medium text-primary dark:text-white text-xl md:text-3xl"
+          className="font-medium text-primary dark:text-white text-2xl md:text-3xl"
           to="/"
         >
           MISC<span>avatars</span>
         </NavLink>
-        <div>
+        <div className="flex items-center">
           <ReactSwitch
             onChange={handleChange}
             checked={theme === "dark"}
             onColor="#ffffff"
-            height={19}
+            height={24}
             color="#ffffff"
-            borderRadius={0}
+            borderRadius={10}
             onHandleColor="#725BFF"
             uncheckedIcon={<p className="grid place-content-center">🌑</p>}
             checkedIcon={<p>🌞</p>}
           />
-          <Button
-            className="dark:text-white text-sm md:text-lg font-bold ml-2"
-            handleClick={handleCartOpen}
-            text={`CART[${totalQuantities}]`}
-          />
+          <button onClick={handleCartOpen} className="flex items-center ml-3"><img src={cartlogo} alt="Cart" width="30px" className="mr-2 dark:invert"/><p className="font-bold dark:text-white">{totalQuantities}</p></button>
         </div>
       </Header>
       <div className="relative">

@@ -1,4 +1,4 @@
-import { ApplePay, CreditCard, GooglePay, PaymentForm } from 'react-square-web-payments-sdk';
+import { ApplePay, CashAppPay, CreditCard, GooglePay, PaymentForm } from 'react-square-web-payments-sdk';
 
 const SquareCheckOutForm = ({totalPrice}) => (
   <PaymentForm
@@ -35,7 +35,7 @@ const SquareCheckOutForm = ({totalPrice}) => (
         countryCode: 'NG',
         city: 'Abeokuta',
       },
-      currencyCode: 'NGN',
+      currencyCode: 'USD',
       intent: 'CHARGE',
     })}
     /**
@@ -45,7 +45,6 @@ const SquareCheckOutForm = ({totalPrice}) => (
 
   >
     <CreditCard />
-    <ApplePay/>
     <GooglePay/>
   </PaymentForm>
 );

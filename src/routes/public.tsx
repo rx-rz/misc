@@ -12,10 +12,11 @@ const App = () => {
 
     const toggleTheme = () => {
       setTheme((curr) => (curr === "light" ? "dark" : "light"));
+      document.body.classList!.toggle("dark")
     };
   
     return (
-        <Layout handleChange={toggleTheme} theme={theme} >
+        <Layout handleChange={toggleTheme} theme={theme}>
             <Suspense fallback={<p>Loading...</p>}>
                 <Outlet/>
             </Suspense>

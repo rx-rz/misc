@@ -15,8 +15,11 @@ export default function ProductPage() {
     useLayoutEffect(() => {
       window.scrollTo(0, 0)
     })
+
+
   return (
     <div className=' dark:bg-gray-900 h-fit md:flex  md:min-h-screen'>
+
         <ProductDisplay imageType={name} imageName={imageName} />
         <ProductImages name={name} changeImageName={changeImageName}/>
         <ProductSettings name={name} price={price}/>
