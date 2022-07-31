@@ -15,7 +15,7 @@ export  function CartItem({ name, price, quantity }: ProductProps) {
         <div>
           <div className="flex mb-1">
             <button
-              onClick={() => toggleCartItemQuantity(name, "dec")}
+              onClick={() => toggleCartItemQuantity(name, "decrement")}
               className="border-2 px-2 border-black font-extrabold dark:text-white dark:border-primary sm:px-3 sm:py-1 transition-colors duration-300 hover:bg-primary hover:text-white"
             >
               -
@@ -24,7 +24,7 @@ export  function CartItem({ name, price, quantity }: ProductProps) {
               {quantity}
             </p>
             <button
-              onClick={() => toggleCartItemQuantity(name, "inc")}
+              onClick={() => toggleCartItemQuantity(name, "increment")}
               className="border-2 px-2 border-black font-extrabold dark:text-white dark:border-primary sm:px-3 sm:py-1 transition-colors duration-300 hover:bg-primary hover:text-white"
             >
               +
