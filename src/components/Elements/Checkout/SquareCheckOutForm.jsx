@@ -2,12 +2,8 @@ import { CreditCard, GooglePay, PaymentForm } from 'react-square-web-payments-sd
 
 const appId = process.env.SQUARE_APPLICATION_ID
 const locId = process.env.SQUARE_LOCATION_ID
-const SquareCheckOutForm = ({totalPrice}) => (
+const SquareCheckOutForm = ({totalPrice, buyerData}) => (
   <PaymentForm
-    /**
-     * Identifies the calling form with a verified application ID generated from
-     * the Square Application Dashboard.
-     */
     applicationId="sandbox-sq0idb-_sLw28PHDGXO6jpqFI5fiw"
     locationId='LRMWY5V6QXGTH'
     /**
@@ -31,9 +27,9 @@ const SquareCheckOutForm = ({totalPrice}) => (
     createVerificationDetails={() => ({
       amount: `${totalPrice}`,
       billingContact: {
-        addressLines: ['123 Main Street', 'Apartment 1'],
-        familyName: 'Adeleye',
-        givenName: 'Temiloluwa',
+        addressLines: [`${buyerData.address}`],
+        familyName: `${buyerData.firstName}`,
+        givenName: `${buyerData.lastName}`,
         countryCode: 'NG',
         city: 'Abeokuta',
       },
@@ -46,7 +42,8 @@ const SquareCheckOutForm = ({totalPrice}) => (
      */
 
   >
-    <CreditCard />
+
+    <CreditCard style={{".input-container": {borderColor: "#725BFF"}, ".input-container.is-focus": {borderColor: "#725BFF"}}}/>
     <GooglePay/>
   </PaymentForm>
 );

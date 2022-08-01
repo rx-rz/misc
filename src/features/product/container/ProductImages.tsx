@@ -1,10 +1,11 @@
 import React from "react";
-import {SmallerProductCard} from "src/components/Card/";
+import { Button } from "src/components";
+import { SmallerProductCard } from "src/components/Elements/Card/";
 import { getProductImagesForProductDisplay } from "../api/getProductImagesForProductDisplay";
 
 const promptUrls = ["ogbeni", "inosuke", "tanjiro", "tenzin"];
 type ProductImagesProps = {
-  name: string | undefined
+  name: string | undefined;
   changeImageName: (name: string) => void;
 };
 export default function ProductImages({
@@ -14,12 +15,11 @@ export default function ProductImages({
   return (
     <div className="flex justify-evenly md:flex-col md:w-2/12 items-center">
       {promptUrls.map((promptUrl, index) => (
-        <button onClick={() =>changeImageName(promptUrl)} key={index} >
+        <Button handleClick={() => changeImageName(promptUrl)} key={index}>
           <SmallerProductCard
             imageUrl={getProductImagesForProductDisplay(name, promptUrl)}
-            
           />
-          </button>
+        </Button>
       ))}
     </div>
   );

@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import { Link } from "react-router-dom";
 import { getImage } from "../api/getImage";
 
-const ProductCard = React.lazy(() => import('src/components/Card/ProductCard'))
+const ProductCard = React.lazy(() => import('src/components/Elements/Card/ProductCard'))
 
 export default function AvatarGrid() {
   return (

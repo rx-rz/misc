@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { getImage } from "../api/getImage";
 import { ProductsOne } from "../api/productsOne";
 
-const ProductCard = React.lazy(() => import('src/components/Card/ProductCard'))
-const Marquee = React.lazy(() => import( "src/components/Marquee/Marquee"));
+const ProductCard = React.lazy(() => import('src/components/Elements/Card/ProductCard'))
+const Marquee = React.lazy(() => import( "src/components/Elements/Marquee/Marquee"));
 export default function AvatarGridBottom() {
   return (
     <div className="w-full grid items-center py-8">

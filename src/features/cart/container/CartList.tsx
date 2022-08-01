@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import {CartItem} from "src/components/CartItem";
+import {CartItem} from "src/components/Elements/CartItem";
 import { useStateContext } from "src/context/countContext";
 import { ProductProps } from "src/types/Product";
 export default function CartList() {
@@ -28,7 +28,7 @@ export default function CartList() {
           <div className="flex justify-center">
             <Link
               to="/checkout"
-              className="bg-primary text-lg w-11/12 mx-auto mt-4 font-AlbertSans text-black font-bold pt-1 mb-4 py-2 transition-colors duration-300 text-center  hover:text-white"
+              className="bg-primary text-lg w-11/12 mx-auto mt-4 font-AlbertSans text-black font-bold pt-1 mb-8 py-2 transition-colors duration-300 text-center  hover:text-white"
             >
               Proceed To Checkout
             </Link>
@@ -36,7 +36,7 @@ export default function CartList() {
         </div>
       ) : (
         <p className="w-5/6 mx-auto text-center text-2xl mt-8 dark:text-white">
-          You have not added any items to the cart. 😶
+          You have not added any items to the cart. 
         </p>
       )}
     </div>

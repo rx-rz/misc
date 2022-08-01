@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from "react";
-import { Header } from "src/components/Header";
+import { Header } from "src/components/Elements/Header";
 import ReactSwitch from "react-switch";
 import { useStateContext } from "src/context/countContext";
 import { NavLink, useLocation } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
-import close from 'src/assets/close.svg'
+import close from "src/assets/close.svg";
 import cartlogo from "src/assets/cart.svg";
-const CartList = React.lazy(() => import("src/features/cart/CartList"));
+const CartList = React.lazy(() => import("src/features/cart/container/CartList"));
 
 type LayoutProps = {
   handleChange: () => void;
@@ -84,7 +84,9 @@ export default function Layout({ handleChange, theme, children }: LayoutProps) {
           ref={cartRef}
         >
           <div className="w-10/12 m-auto">
-            <button onClick={handleCartClose} className="my-8 dark:invert"><img src={close} alt="Close" width="30px" title="Close Cart"/></button>
+            <button onClick={handleCartClose} className="my-8 dark:invert">
+              <img src={close} alt="Close" width="30px" title="Close Cart" />
+            </button>
             <CartList />
           </div>
         </div>
