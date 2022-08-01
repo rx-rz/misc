@@ -17,14 +17,13 @@ export function Footer() {
           Github
         </a>
         <a
-          href="https://www.github.com/temiloluwa-js"
+          href="https://www.reddit.com/user/SituationInfamous137"
           className="my-2 transition-colors duration-300 hover:text-orange-600"
         >
           Reddit
         </a>
       </div>
       <div className="text-6xl font-extrabold grid place-content-center gradient w-1/2 sm:text-9xl">
-        {" "}
         <Link to="/"> MISC</Link>
       </div>
     </footer>
