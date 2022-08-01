@@ -6,9 +6,9 @@ import CheckoutPage from "src/pages/CheckoutPage";
 
 const HomePage = React.lazy(() => import('../pages/HomePage'))
 const ProductPage = React.lazy(() => import('../pages/ProductPage'))
-
+const storageTheme = localStorage.getItem("theme")
 const App = () => {
-    const [theme, setTheme] = useState("light");
+    const [theme, setTheme] = useState(storageTheme ? storageTheme : "dark");
 
     const toggleTheme = () => {
       setTheme((curr) => (curr === "light" ? "dark" : "light"));

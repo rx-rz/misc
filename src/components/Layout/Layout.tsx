@@ -51,7 +51,7 @@ export default function Layout({ handleChange, theme, children }: LayoutProps) {
         <div className="flex items-center">
           <ReactSwitch
             onChange={handleChange}
-            checked={theme === "dark"}
+            checked={theme === "light"}
             onColor="#ffffff"
             height={24}
             color="#ffffff"

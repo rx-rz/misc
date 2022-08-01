@@ -5,3 +5,6 @@ export default function Layout() {
     <div>Layout.test</div>
   )
 }
+
+
+test()

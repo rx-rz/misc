@@ -11,8 +11,7 @@ type ButtonProps = {
 export  function Button({ text, className, handleClick, children }: ButtonProps) {
   return (
     <button onClick={handleClick} className={className} data-testid="button">
-      {text && text}
-      {children && children}
+      {text && text}  {children && children}
     </button>
   );
 }
