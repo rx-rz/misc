@@ -47,7 +47,7 @@
 
 import { AppProvider } from "./provider/app";
 import { AppRoutes } from "./routes";
-
+// require('dotenv').config()
 export default function App(){
   return (
     <AppProvider>
