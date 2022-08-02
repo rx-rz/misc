@@ -8,7 +8,7 @@ export function CartItem({ name, price, quantity }: ProductProps) {
   const { toggleCartItemQuantity, removeItemFromCart } = useStateContext()!;
   return (
     <article className="w-full  m-auto shadow-lg my-4  flex font-AlbertSans justify-evenly dark:text-slate-50   items-center border-2 border-primary">
-      <img src={getImage(name)} alt={name} className="w-3/12 h-24" />
+      <img src={getImage(name)} alt={name} className="w-3/12 h-24" loading="lazy"/>
       <aside className="w-9/12 flex justify-between items-center h-full">
         <div className="w-6/12">
         <h1 className="font-bold text-2xl  ml-3 m-auto">{name}</h1>

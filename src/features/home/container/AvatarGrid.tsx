@@ -6,7 +6,7 @@ const ProductCard = React.lazy(() => import('src/components/Elements/Card/Produc
 
 export default function AvatarGrid() {
   return (
-    <div className="flex  flex-wrap  md:basis-2 justify-center py-4 sm:py-8">
+    <section className="flex  flex-wrap  md:basis-2 justify-center py-4 sm:py-8">
       <Suspense fallback={<p>Loading...</p>}>
         <Link to={"/big-ears/100"} className="m-12 ">
           <ProductCard
@@ -34,6 +34,6 @@ export default function AvatarGrid() {
           <ProductCard imageUrl={getImage("micah")} name="micah" price={80} />
         </Link>
       </Suspense>
-    </div>
+    </section>
   );
 }

@@ -7,7 +7,7 @@ const ProductCard = React.lazy(() => import('src/components/Elements/Card/Produc
 const Marquee = React.lazy(() => import( "src/components/Elements/Marquee/Marquee"));
 export default function AvatarGridBottom() {
   return (
-    <div className="w-full grid items-center py-8">
+    <section className="w-full grid items-center py-8">
       <Marquee>ALL AVAILABLE AVATARS ✌</Marquee>
       <div className="flex flex-wrap basis-7 md:basis-12 justify-center py-20 sm:py-20">
         {ProductsOne.map((product, index) => (
@@ -22,6 +22,6 @@ export default function AvatarGridBottom() {
         ))}
       </div>
       <Marquee>ALL AVAILABLE AVATARS ✌</Marquee>
-    </div>
+    </section>
   );
 }

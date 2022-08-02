@@ -3,6 +3,7 @@ import { StateContextProvider } from "src/context/countContext";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Footer } from "src/components";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
+
 type AppProviderProps = {
   children: React.ReactNode;
 };
