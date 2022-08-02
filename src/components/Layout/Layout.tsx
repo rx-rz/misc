@@ -19,7 +19,7 @@ export default function Layout({ handleChange, theme, children }: LayoutProps) {
   const location = useLocation();
   const { totalQuantities } = useStateContext()!;
 
-  /**Upon change in location, the cart closes if it is */
+  // /**Upon change in location, the cart closes if it is */
   useEffect(() => {
     handleCartClose();
   }, [location]);

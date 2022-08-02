@@ -12,8 +12,7 @@ export default function ProductSettings({ name, price }: ProductSettingsProps) {
     if (quantity) {
       setQuantity(1);
     }
-    
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const product = {
     name: name,

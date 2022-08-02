@@ -41,7 +41,7 @@ export const StateContextProvider = ({
   const [cartItems, setCartItems] = useState(itemsInStorage);
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalQuantities, setTotalQuantities] = useState(0);
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(2);
 
   useLayoutEffect(() => {
     setTotalQuantities(cartItems.length);
@@ -64,7 +64,7 @@ export const StateContextProvider = ({
         backgroundColor: "#ffffff",
         border: "1px solid #725BFF",
       },
-      duration: 1500,
+      duration: 700,
     });
 
 

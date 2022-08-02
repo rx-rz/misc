@@ -1,5 +1,4 @@
 import {  render, screen } from "@testing-library/react"
-import userEvent from "@testing-library/user-event"
 import { Button } from "../Button"
   
 test('all button properties should display correctly', async () => {
@@ -10,6 +9,5 @@ test('all button properties should display correctly', async () => {
     expect(button).toHaveClass("px-2")
     expect(button).toHaveTextContent(/Test/)
     expect(button).toHaveTextContent(/text content/i)
-    userEvent.click(button)
-    expect(handleClick).toBeCalledTimes(1)
 })
+

@@ -12,7 +12,7 @@ export function CartItem({ name, price, quantity }: ProductProps) {
       <aside className="w-9/12 flex justify-between items-center h-full">
         <div className="w-6/12">
         <h1 className="font-bold text-2xl  ml-3 m-auto">{name}</h1>
-        <h2 className="gradient font-bold text-lg  ml-2">${price * quantity}</h2>
+        <h2 className="gradient font-bold text-lg  ml-2">${price}</h2>
         </div>
         <div className="flex mb-1 mx-auto w-3/12  mr-3 justify-evenly">
           <Button
@@ -35,7 +35,7 @@ export function CartItem({ name, price, quantity }: ProductProps) {
           </Button>
         </div>
         <Button  handleClick={() => removeItemFromCart(name)} className="w-1/12 m-auto">
-          <img src={close} width="20px" alt="Close" className="dark:invert mr-2" />
+          <img src={close} width="20px" alt="Close" className="dark:invert mr-2" data-testid="remove-button"/>
         </Button>
       </aside>
     </article>
