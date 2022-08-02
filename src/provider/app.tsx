@@ -12,7 +12,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
     <PayPalScriptProvider
       options={{
         "client-id":
-          "AVK0UYz2rvbeLW2w9LdWYip6pQkSg-3SjNgR-l14IUJuXW7oeD1ZYkaguJCKllxe7sBhEYaP-biBoTwQ",
+          process.env.PAYPAL_CLIENT_ID!,
       }}
     >
       <StateContextProvider>
