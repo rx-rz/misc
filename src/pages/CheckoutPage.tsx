@@ -9,18 +9,23 @@ export default function CheckoutPage() {
       <div className="hidden md:w-6/12 md:block">
         <CheckoutItems />
       </div>
-      <div className="w-full md:w-4/12 my-4">
-        <div className="bg-primary text-white rounded-md h-96 mb-4 text-center flex flex-col content-between  ">
-          <div className="mb-10 mt-10 md:mt-5">
-            <h1 className="text-4xl ">Avatar Types Bought:</h1>
-            <h2 className="text-8xl">{totalQuantities}</h2>
+      <div className="w-full md:w-4/12 my-4 ">
+        <div className="sticky top-16">
+          <div
+            className="bg-primary text-white rounded-md h-96 mb-4 
+        text-center flex flex-col content-between "
+          >
+            <div className="mb-10 mt-10 md:mt-5">
+              <h1 className="text-4xl ">Avatars Bought:</h1>
+              <h2 className="text-8xl">{totalQuantities}</h2>
+            </div>
+            <div>
+              <h1 className="text-4xl">Total Price:</h1>
+              <h2 className="text-8xl">${totalPrice}</h2>
+            </div>
           </div>
-          <div>
-            <h1 className="text-4xl">Total Price:</h1>
-            <h2 className="text-8xl">${totalPrice}</h2>
-          </div>
+          <PaypalCheckOutButton totalPrice={totalPrice} />
         </div>
-        <PaypalCheckOutButton totalPrice={totalPrice} />
       </div>
     </div>
   );

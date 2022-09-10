@@ -3,10 +3,10 @@ import { CartItem } from "src/components/Elements/CartItem";
 export default function CheckoutItems() {
   const { cartItems } = useCartContext()!;
   return (
-    <div>
+    <div className="grid xl:grid-cols-2 grid-cols-1 gap-20 my-[15px]">
       {cartItems.map((cartItem) => (
         <CartItem
-        key={cartItem.name}
+          key={cartItem.name}
           name={cartItem.name}
           price={cartItem.price}
           quantity={cartItem.quantity}

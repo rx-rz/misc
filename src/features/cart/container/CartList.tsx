@@ -11,7 +11,7 @@ export default function CartList() {
     >
       {cartItems.length > 0 ? (
         <div>
-          <div className="grid lg:grid-cols-2 gap-20 md:grid-cols-1">
+          <div className="grid lg:grid-cols-2 gap-20 md:grid-cols-1 mb-16 mt-10">
             {cartItems.map((cartItem: ProductProps) => (
               <div key={cartItem.name}>
                 <CartItem

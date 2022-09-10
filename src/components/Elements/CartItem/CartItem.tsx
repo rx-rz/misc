@@ -7,7 +7,7 @@ import { Button } from "../Button";
 export function CartItem({ name, price, quantity }: ProductProps) {
   const { toggleCartItemQuantity, removeItemFromCart } = useCartContext()!;
   return (
-    <article className="lg:w-full  w-3/4 border border-secondary mx-auto">
+    <article className="lg:w-full  w-11/12 border border-secondary mx-auto">
       <img
         src={getImage(name)}
         alt={name}
