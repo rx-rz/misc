@@ -3,7 +3,7 @@ import { Button } from "src/components";
 import { SmallerProductCard } from "src/components/Elements/Card/";
 import { getProductImagesForProductDisplay } from "../api/getProductImagesForProductDisplay";
 
-const promptUrls = ["ogbeni", "inosuke", "tanjiro", "tenzin"];
+const promptUrls = ["biscuit", "inosuke", "tanjiro", "tenzin"];
 type ProductImagesProps = {
   name: string | undefined;
   changeImageName: (name: string) => void;
