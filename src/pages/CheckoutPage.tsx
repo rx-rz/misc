@@ -10,9 +10,9 @@ export default function CheckoutPage() {
         <CheckoutItems />
       </div>
       <div className="w-full md:w-4/12 my-4 ">
-        <div className="sticky top-16">
+        <div className="md:sticky top-16">
           <div
-            className="bg-primary text-white rounded-md h-96 mb-4 
+            className="bg-primary text-white  h-96 mb-4 
         text-center flex flex-col content-between "
           >
             <div className="mb-10 mt-10 md:mt-5">
@@ -24,7 +24,9 @@ export default function CheckoutPage() {
               <h2 className="text-8xl">${totalPrice}</h2>
             </div>
           </div>
-          <PaypalCheckOutButton totalPrice={totalPrice} />
+          <div className="sticky top-10">
+            <PaypalCheckOutButton totalPrice={totalPrice} />
+          </div>
         </div>
       </div>
     </div>
