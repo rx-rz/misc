@@ -1,5 +1,5 @@
 import {render as rtlRender} from '@testing-library/react'
-import {StateContextProvider} from 'src/context/countContext'
+import {StateContextProvider} from 'src/context/cartContext'
 
 function render(ui, {quantity = 0, ...options} = {}) {
   const Wrapper = ({children}) => (

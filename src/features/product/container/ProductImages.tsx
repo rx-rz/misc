@@ -1,4 +1,3 @@
-import React from "react";
 import { Button } from "src/components";
 import { SmallerProductCard } from "src/components/Elements/Card/";
 import { getProductImagesForProductDisplay } from "../api/getProductImagesForProductDisplay";

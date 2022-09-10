@@ -1,37 +1,32 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  mode: 'jit',
+  mode: "jit",
   darkMode: "class",
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        primary: "#725BFF",
-        secondary: "#A4A4FF",
-        tertiary: "#ffffff" 
+        primary: "#f6828c",
+        secondary: "#f6828c",
+        tertiary: "#ffffff",
       },
       height: {
         maximalHeight: "calc(100vh - 3rem)",
         halfHeight: "40vh",
-        cartHeight: "calc(100vh - 7.5rem)"
+        cartHeight: "calc(100vh - 7.5rem)",
       },
       minHeight: {
         maximalHeight: "calc(100vh - 3rem)",
       },
       width: {
         smallWidth: "90vw",
-        mediumWidth: "60vw"
+        mediumWidth: "60vw",
       },
       fontFamily: {
         Poppins: ["Poppins, sans-serif"],
-        AlbertSans: ["Albert Sans, sans-serif"]
+        AlbertSans: ["Albert Sans, sans-serif"],
       },
-
     },
   },
-  plugins: [
-  ],
-}
-
+  plugins: [],
+};

@@ -9,11 +9,11 @@ export type CartItem = {
 };
 
 type Product = {
-    name: string;
-    price: string | number
-}
+  name: string;
+  price: string | number;
+};
 
-type StateContextType = {
+type CartContextType = {
   cartItems: CartItem[];
   totalPrice: number;
   quantity: number;
@@ -26,15 +26,15 @@ type StateContextType = {
   removeItemFromCart: (name: string) => void;
 };
 
-type StateContextProviderProps = {
+type CartContextProviderProps = {
   children: React.ReactNode;
 };
 
-export const StateContext = createContext<StateContextType | null>(null);
+export const CartContext = createContext<CartContextType | null>(null);
 
 export const StateContextProvider = ({
   children,
-}: StateContextProviderProps) => {
+}: CartContextProviderProps) => {
   const itemsInStorage = localStorage.getItem("cart")
     ? JSON.parse(localStorage.getItem("cart")!)
     : [];
@@ -43,33 +43,36 @@ export const StateContextProvider = ({
   const [totalQuantities, setTotalQuantities] = useState(0);
   const [quantity, setQuantity] = useState(2);
 
-  useLayoutEffect(() => {
-    setTotalQuantities(cartItems.length);
-  }, [cartItems]);
-
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cartItems));
     let price = 0;
-    for (const i of cartItems) {
-      price += i.price * i.quantity;
+    for (let item of cartItems) {
+      price += item.price * item.quantity;
     }
     setTotalPrice(price);
+
+    let quantity = 0;
+    for (let item of cartItems) {
+      quantity += item.quantity;
+    }
+    setTotalQuantities(quantity);
   }, [cartItems]);
 
   const sucessToast = () =>
     toast.success("Item sucessfully added to cart", {
       style: {
         borderRadius: 0,
-        color: "#725BFF",
+        color: "black",
         backgroundColor: "#ffffff",
         border: "1px solid #725BFF",
       },
       duration: 700,
     });
 
-
   const onAddtoCart = (product: Product) => {
-    const exist = cartItems.find((item: CartItem) => item.name === product.name);
+    const exist = cartItems.find(
+      (item: CartItem) => item.name === product.name
+    );
     if (!exist) {
       setCartItems([...cartItems, { ...product, quantity: 1 }]);
       sucessToast();
@@ -84,11 +87,9 @@ export const StateContextProvider = ({
     }
   };
 
-
   const increaseQuantity = () => {
     setQuantity((prevQuantity) => prevQuantity + 1);
   };
-
 
   const decreaseQuantity = () => {
     setQuantity((prevQuantity) => {
@@ -119,11 +120,13 @@ export const StateContextProvider = ({
   };
 
   const removeItemFromCart = (name: string) => {
-    const newCartItems = cartItems.filter((item: CartItem) => item.name !== name);
+    const newCartItems = cartItems.filter(
+      (item: CartItem) => item.name !== name
+    );
     setCartItems(newCartItems);
   };
   return (
-    <StateContext.Provider
+    <CartContext.Provider
       value={{
         cartItems,
         totalPrice,
@@ -138,8 +141,8 @@ export const StateContextProvider = ({
       }}
     >
       {children}
-    </StateContext.Provider>
+    </CartContext.Provider>
   );
 };
 
-export const useStateContext = () => useContext(StateContext);
+export const useCartContext = () => useContext(CartContext);

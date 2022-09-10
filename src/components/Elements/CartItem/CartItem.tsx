@@ -1,11 +1,11 @@
 import { ProductProps } from "src/types/Product";
 import { getImage } from "src/features/home/api/getImage";
-import { useStateContext } from "src/context/countContext";
+import { useCartContext } from "src/context/cartContext";
 import close from "src/assets/delete.svg";
 import { Button } from "../Button";
 
 export function CartItem({ name, price, quantity }: ProductProps) {
-  const { toggleCartItemQuantity, removeItemFromCart } = useStateContext()!;
+  const { toggleCartItemQuantity, removeItemFromCart } = useCartContext()!;
   return (
     <article className="w-full  m-auto shadow-lg my-4  flex font-AlbertSans justify-evenly dark:text-slate-50   items-center border-2 border-primary">
       <img src={getImage(name)} alt={name} className="w-3/12 h-24" loading="lazy"/>

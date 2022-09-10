@@ -1,5 +1,5 @@
 import userEvent from "@testing-library/user-event";
-import { StateContext } from "src/context/countContext";
+import { StateContext } from "src/context/cartContext";
 import { render, screen } from "src/test/test_utils";
 import { CartItem } from "../CartItem";
 const name = "micah";

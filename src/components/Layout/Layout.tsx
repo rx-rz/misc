@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { Header } from "src/components/Elements/Header";
 import ReactSwitch from "react-switch";
-import { useStateContext } from "src/context/countContext";
+import { useCartContext } from "src/context/cartContext";
 import { NavLink, useLocation } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import close from "src/assets/close.svg";
@@ -17,7 +17,7 @@ type LayoutProps = {
 /**The Navbar Component accepts 3 link items as children and justifies them evenly */
 export default function Layout({ handleChange, theme, children }: LayoutProps) {
   const location = useLocation();
-  const { totalQuantities } = useStateContext()!;
+  const { totalQuantities } = useCartContext()!;
 
   // /**Upon change in location, the cart closes if it is */
   useEffect(() => {

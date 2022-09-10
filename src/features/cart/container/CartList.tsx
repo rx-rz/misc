@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import {CartItem} from "src/components/Elements/CartItem";
-import { useStateContext } from "src/context/countContext";
+import { useCartContext } from "src/context/cartContext";
 import { ProductProps } from "src/types/Product";
 export default function CartList() {
-  const { cartItems, totalPrice } = useStateContext()!
+  const { cartItems, totalPrice } = useCartContext()!
 
   return (
     <div

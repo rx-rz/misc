@@ -1,5 +1,5 @@
 import React from "react";
-import { StateContextProvider } from "src/context/countContext";
+import { StateContextProvider } from "src/context/cartContext";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Footer } from "src/components";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";

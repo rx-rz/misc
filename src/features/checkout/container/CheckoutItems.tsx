@@ -1,7 +1,7 @@
-import { useStateContext } from "src/context/countContext";
+import { useCartContext } from "src/context/cartContext";
 import { CartItem } from "src/components/Elements/CartItem";
 export default function CheckoutItems() {
-  const { cartItems } = useStateContext()!;
+  const { cartItems } = useCartContext()!;
   return (
     <div>
       {cartItems.map((cartItem) => (

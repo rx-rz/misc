@@ -1,17 +1,8 @@
-import React, { Suspense } from "react";
-
-const AvatarGrid = React.lazy(
-  () => import("src/features/home/container/AvatarGrid")
-);
-const AvatarGridBottom = React.lazy(
-  () => import("src/features/home/container/AvatarGridBottom")
-);
-const DescriptionText = React.lazy(
-  () => import("src/features/home/container/DescriptionText")
-);
-const IntroText = React.lazy(
-  () => import("src/features/home/container/IntroText")
-);
+import  { Suspense } from "react";
+import AvatarGrid from "src/features/home/container/AvatarGrid";
+import AvatarGridBottom from "src/features/home/container/AvatarGridBottom";
+import DescriptionText from "src/features/home/container/DescriptionText";
+import IntroText from "src/features/home/container/IntroText";
 
 export default function HomePage() {
   return (

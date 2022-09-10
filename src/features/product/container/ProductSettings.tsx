@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { Button } from "src/components";
-import { useStateContext } from "src/context/countContext";
+import { useCartContext } from "src/context/cartContext";
 type ProductSettingsProps = {
   name: string;
   price: string | number;
 };
 
 export default function ProductSettings({ name, price }: ProductSettingsProps) {
-  const { onAddtoCart, quantity, setQuantity } = useStateContext()!;
+  const { onAddtoCart, quantity, setQuantity } = useCartContext()!;
   
   useEffect(() => {
     if (quantity) {
@@ -41,8 +41,6 @@ export default function ProductSettings({ name, price }: ProductSettingsProps) {
           </Button>
         </div>
       </div>
-
-      <div className="flex"></div>
     </div>
   );
 }

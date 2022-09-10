@@ -1,9 +1,9 @@
 import PaypalCheckOutButton from "src/components/Elements/Checkout/PaypalCheckOutButton";
-import { useStateContext } from "src/context/countContext";
+import { useCartContext } from "src/context/cartContext";
 import CheckoutItems from "src/features/checkout/container/CheckoutItems";
 
 export default function CheckoutPage() {
-  const { totalPrice, totalQuantities } = useStateContext()!;
+  const { totalPrice, totalQuantities } = useCartContext()!;
   return (
     <div className="flex  justify-evenly min-h-screen">
       <div className="hidden md:w-6/12 md:block">
