@@ -7,7 +7,7 @@ import { Button } from "../Button";
 export function CartItem({ name, price, quantity }: ProductProps) {
   const { toggleCartItemQuantity, removeItemFromCart } = useCartContext()!;
   return (
-    <article className="lg:w-full  w-11/12 border border-secondary mx-auto">
+    <article className="  w-full border border-secondary mx-auto">
       <img
         src={getImage(name)}
         alt={name}
@@ -27,7 +27,8 @@ export function CartItem({ name, price, quantity }: ProductProps) {
               -
             </Button>
             <p
-              className="border-2 px-2 border-slate-700 rounded-md font-medium dark:text-white dark:border-primary sm:px-3 sm:py-1"
+              className="border-2 px-2 border-slate-700 rounded-md font-medium 
+              dark:text-white dark:border-primary sm:px-3 sm:py-1"
               data-testid="quantity"
             >
               {quantity}
@@ -55,6 +56,5 @@ export function CartItem({ name, price, quantity }: ProductProps) {
         </div>
       </div>
     </article>
-
   );
 }

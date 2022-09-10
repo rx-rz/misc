@@ -1,17 +1,15 @@
 import { Link } from "react-router-dom";
-import {CartItem} from "src/components/Elements/CartItem";
+import { CartItem } from "src/components/Elements/CartItem";
 import { useCartContext } from "src/context/cartContext";
 import { ProductProps } from "src/types/Product";
 export default function CartList() {
-  const { cartItems, totalPrice } = useCartContext()!
+  const { cartItems, totalPrice } = useCartContext()!;
 
   return (
-    <div
-      className="flex flex-col align-middle h-screen"
-    >
+    <div className="flex flex-col align-middle h-screen">
       {cartItems.length > 0 ? (
         <div>
-          <div className="grid lg:grid-cols-2 gap-20 md:grid-cols-1 mb-16 mt-10">
+          <div className="grid lg:grid-cols-2 gap-10 md:grid-cols-1 mb-16 mt-10">
             {cartItems.map((cartItem: ProductProps) => (
               <div key={cartItem.name}>
                 <CartItem
@@ -36,7 +34,7 @@ export default function CartList() {
         </div>
       ) : (
         <p className="w-5/6 mx-auto text-center text-2xl mt-8 dark:text-white">
-          You have not added any items to the cart. 
+          You have not added any items to the cart.
         </p>
       )}
     </div>
