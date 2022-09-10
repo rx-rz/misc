@@ -2,11 +2,9 @@ export const SuspenseFallback = () => {
   return (
     <div
       className="w-screen h-screen inset-0 bg-tertiary 
-       grid items-center content-center dark:bg-[#0F172A]"
+       flex justify-center items-center dark:bg-[#0F172A]"
     >
-
-      <p className="dark:text-white">Loading....</p>
-
+      <p className="dark:text-white font-Poppins">Loading....</p>
     </div>
   );
 };
