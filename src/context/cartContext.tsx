@@ -59,12 +59,12 @@ export const CartContextProvider = ({
   }, [cartItems]);
 
   const sucessToast = () =>
-    toast.success("Item sucessfully added to cart", {
+    toast.success("Item added to cart", {
       style: {
         borderRadius: 0,
-        color: "white",
-        backgroundColor: "#f6828c",
-        border: "1px solid #f6828c",
+        color: "#1EA081",
+        backgroundColor: "#fff",
+        border: "1px solid #1EA081",
       },
       duration: 700,
     });

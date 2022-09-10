@@ -22,7 +22,7 @@ export const Switcher = () => {
         checked={isDark}
         onChange={toggleDarkMode}
         size={30}
-        moonColor="#f6828c"
+        moonColor="#1EA081"
         sunColor="#0F172A"
       />
     </div>
