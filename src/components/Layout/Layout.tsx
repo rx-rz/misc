@@ -6,6 +6,7 @@ import { Toaster } from "react-hot-toast";
 import close from "src/assets/close.svg";
 import cartlogo from "src/assets/cart.svg";
 import { Switcher } from "../Elements/Switcher/Switcher";
+import logo from "src/assets/logo.png";
 const CartList = React.lazy(
   () => import("src/features/cart/container/CartList")
 );
@@ -17,7 +18,6 @@ type LayoutProps = {
 export default function Layout({ children }: LayoutProps) {
   const location = useLocation();
   const { totalQuantities } = useCartContext()!;
-
 
   useEffect(() => {
     handleCartClose();
@@ -41,10 +41,11 @@ export default function Layout({ children }: LayoutProps) {
     <div className="dark:bg-gray-900  w-full bg-tertiary">
       <Header>
         <NavLink
-          className="font-medium text-primary dark:text-white text-2xl md:text-3xl"
+          className="font-medium text-primary dark:text-white text-2xl md:text-3xl flex items-center"
           to="/"
         >
-          MISC<span>avatars</span>
+          <img src={logo} alt="MiscAvatars" width="60px" height="60px" />{" "}
+          <h1 className="-ml-4">MA</h1>
         </NavLink>
 
         <div className="flex items-center">
