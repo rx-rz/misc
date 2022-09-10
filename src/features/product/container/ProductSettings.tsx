@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Button } from "src/components";
 import { useCartContext } from "src/context/cartContext";
 type ProductSettingsProps = {
@@ -7,9 +8,12 @@ type ProductSettingsProps = {
 
 export default function ProductSettings({ name, price }: ProductSettingsProps) {
   const { onAddtoCart, quantity, setQuantity } = useCartContext()!;
-  quantity && setQuantity(1);
-
-
+  useEffect(() => {
+    if (quantity) {
+      setQuantity(1);
+    }
+  }, [quantity, setQuantity]);
+  
   const product = {
     name: name,
     price: price,
@@ -22,14 +26,14 @@ export default function ProductSettings({ name, price }: ProductSettingsProps) {
     >
       <div className="w-11/12   flex flex-col">
         <h1
-          className="text-primary text-4xl md:text-5xl font-medium
+          className="dark:text-white  text-5xl md:text-5xl font-medium
          py-3 lg:text-6xl w-5/6 m-auto mb-4"
         >
           {name}
         </h1>
         <p
           className="text-3xl font-medium md:text-4xl lg:text-5xl
-         dark:text-white mb-4 w-5/6 m-auto"
+         text-secondary mb-4 w-5/6 m-auto"
         >
           ${price}
         </p>

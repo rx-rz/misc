@@ -12,7 +12,7 @@ export default function ProductImages({
   changeImageName,
 }: ProductImagesProps) {
   return (
-    <div className="flex justify-evenly md:flex-col md:w-2/12 items-center mt-6 -mb-6 md:mt-0 md:-mb-0">
+    <div className="flex justify-evenly md:flex-col md:w-2/12 items-center mt-6 -mb-6 md:-mt-12 md:-mb-0">
       {promptUrls.map((promptUrl, index) => (
         <Button handleClick={() => changeImageName(promptUrl)} key={index}>
           <SmallerProductCard
