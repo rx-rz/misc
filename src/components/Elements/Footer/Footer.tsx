@@ -7,18 +7,24 @@ export function Footer() {
         <a
           href="https://www.twitter.com/temiloluwa_js"
           className="my-2 transition-colors duration-300 hover:text-blue-600"
+          target="_blank"
+          rel="noreferrer"
         >
           Twitter
         </a>
         <a
           href="https://www.github.com/temiloluwa-js"
           className="my-2 transition-colors duration-300 hover:text-gray-600"
+          target="_blank"
+          rel="noreferrer"
         >
           Github
         </a>
         <a
           href="https://www.reddit.com/user/SituationInfamous137"
           className="my-2 transition-colors duration-300 hover:text-orange-600"
+          target="_blank"
+          rel="noreferrer"
         >
           Reddit
         </a>

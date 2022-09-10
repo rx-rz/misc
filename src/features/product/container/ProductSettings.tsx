@@ -8,12 +8,14 @@ type ProductSettingsProps = {
 
 export default function ProductSettings({ name, price }: ProductSettingsProps) {
   const { onAddtoCart, quantity, setQuantity } = useStateContext()!;
+  
   useEffect(() => {
     if (quantity) {
       setQuantity(1);
     }
 
   }, []);
+
   const product = {
     name: name,
     price: price,

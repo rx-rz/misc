@@ -1,11 +1,11 @@
-type ProductType = {
+export type AvatarType = {
     name: string,
     price: number,
     quantity: number
 }[]
 
 
-export const ProductsOne: ProductType = [
+export const Avatars: AvatarType = [
     {name: 'adventurer', price: 100, quantity: 20},
     {name: 'avataaars', price: 120, quantity: 20},
     {name: 'big-ears', price: 100, quantity: 20},
