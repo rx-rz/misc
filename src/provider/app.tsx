@@ -10,7 +10,7 @@ type AppProviderProps = {
 
 export const AppProvider = ({ children }: AppProviderProps) => {
   return (
-    <Suspense fallback={<p>Loading...</p>}>
+    <Suspense>
       <PayPalScriptProvider
         options={{
           "client-id": `${process.env.REACT_APP_PAYPAL_CLIENT_ID}`,

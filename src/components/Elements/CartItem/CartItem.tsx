@@ -15,8 +15,8 @@ export function CartItem({ name, price, quantity }: ProductProps) {
       />
       <div className="flex w-full h-20 border border-secondary ">
         <div className="font-bold my-auto w-6/12 border-r border-r-secondary">
-          <h1 className="ml-3 text-xl lg:text-2xl text-white ">{name}</h1>
-          <h2 className="ml-3 text-md lg:text-xl text-secondary">${price}</h2>
+          <h1 className="ml-3 text-lg dark:text-white ">{name}</h1>
+          <h2 className="ml-3 text-md text-secondary">${price}</h2>
         </div>
         <div className="font-bold my-auto w-6/12 flex">
           <div className="mx-auto flex">
