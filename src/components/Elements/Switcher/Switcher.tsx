@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-// import { DarkModeSwitch } from "react-toggle-dark-mode";
+import { DarkModeSwitch } from "react-toggle-dark-mode";
 
 export const Switcher = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme"));
@@ -18,13 +18,13 @@ export const Switcher = () => {
   }, [theme, colorTheme]);
   return (
     <div className="flex items-center">
-      {/* <DarkModeSwitch
+      <DarkModeSwitch
         checked={isDark}
         onChange={toggleDarkMode}
         size={30}
-        moonColor="white"
-        sunColor="#121212"
-      /> */}
+        moonColor="#f6828c"
+        sunColor="#0F172A"
+      />
     </div>
   );
 };

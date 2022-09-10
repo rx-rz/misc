@@ -1,12 +1,14 @@
 import React, { useEffect, useRef } from "react";
 import { Header } from "src/components/Elements/Header";
-import ReactSwitch from "react-switch";
 import { useCartContext } from "src/context/cartContext";
 import { NavLink, useLocation } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import close from "src/assets/close.svg";
 import cartlogo from "src/assets/cart.svg";
-const CartList = React.lazy(() => import("src/features/cart/container/CartList"));
+import { Switcher } from "../Elements/Switcher/Switcher";
+const CartList = React.lazy(
+  () => import("src/features/cart/container/CartList")
+);
 
 type LayoutProps = {
   handleChange: () => void;
@@ -49,17 +51,7 @@ export default function Layout({ handleChange, theme, children }: LayoutProps) {
         </NavLink>
 
         <div className="flex items-center">
-          <ReactSwitch
-            onChange={handleChange}
-            checked={theme === "light"}
-            onColor="#ffffff"
-            height={24}
-            color="#ffffff"
-            borderRadius={10}
-            onHandleColor="#725BFF"
-            uncheckedIcon={<p className="grid place-content-center">🌑</p>}
-            checkedIcon={<p>🌞</p>}
-          />
+          <Switcher />
           <button onClick={handleCartOpen} className="flex items-center ml-3">
             <img
               src={cartlogo}

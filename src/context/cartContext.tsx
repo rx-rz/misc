@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useLayoutEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { createContext } from "react";
 import toast from "react-hot-toast";
 
@@ -62,9 +62,9 @@ export const StateContextProvider = ({
     toast.success("Item sucessfully added to cart", {
       style: {
         borderRadius: 0,
-        color: "black",
-        backgroundColor: "#ffffff",
-        border: "1px solid #725BFF",
+        color: "white",
+        backgroundColor: "#f6828c",
+        border: "1px solid #f6828c",
       },
       duration: 700,
     });
