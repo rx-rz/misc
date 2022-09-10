@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useLayoutEffect, useState } from "react";
 import { createContext } from "react";
 import toast from "react-hot-toast";
 
@@ -32,7 +32,7 @@ type CartContextProviderProps = {
 
 export const CartContext = createContext<CartContextType | null>(null);
 
-export const StateContextProvider = ({
+export const CartContextProvider = ({
   children,
 }: CartContextProviderProps) => {
   const itemsInStorage = localStorage.getItem("cart")

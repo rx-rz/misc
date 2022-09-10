@@ -11,13 +11,11 @@ const CartList = React.lazy(
 );
 
 type LayoutProps = {
-  handleChange: () => void;
-  theme: string;
   children: React.ReactNode;
 };
 
 /**The Navbar Component accepts 3 link items as children and justifies them evenly */
-export default function Layout({ handleChange, theme, children }: LayoutProps) {
+export default function Layout({ children }: LayoutProps) {
   const location = useLocation();
   const { totalQuantities } = useCartContext()!;
 

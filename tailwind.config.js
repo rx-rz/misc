@@ -23,8 +23,8 @@ module.exports = {
         mediumWidth: "60vw",
       },
       fontFamily: {
-        Poppins: ["Poppins, sans-serif"],
-        AlbertSans: ["Albert Sans, sans-serif"],
+        Poppins: ["Ranade, sans-serif"],
+        AlbertSans: ["Excon, sans-serif"],
       },
     },
   },

@@ -1,7 +1,7 @@
 export default function DescriptionText() {
   return (
-    <section className="text-xl text-center self-center sm:text-2xl  w-4/6 pt-8 pb-24 font-medium dark:text-white text-black m-auto font-AlbertSans">
-      <span className="text-primary font-extrabold">Misc is an art collection of 20 unique surreal avatars created by
+    <section className="text-xl text-center self-center sm:text-2xl  w-4/6 pt-8 pb-24 font-light dark:text-white text-black m-auto font-AlbertSans">
+      <span className="text-primary font-light">Misc is an art collection of 20 unique surreal avatars created by
       Temiloluwa that live on the Firebase blockchain. </span>‍ Avatars are the
       foundation of all life on the digital system, upon which machines and
       every other electronic creature depends. Ecosystems thrive with a
