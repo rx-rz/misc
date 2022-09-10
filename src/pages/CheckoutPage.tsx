@@ -3,6 +3,7 @@ import { useCartContext } from "src/context/cartContext";
 import CheckoutItems from "src/features/checkout/container/CheckoutItems";
 
 export default function CheckoutPage() {
+  document.title = "Misc Avatars: Checkout Page"
   const { totalPrice, totalQuantities } = useCartContext()!;
   return (
     <div className="flex  justify-evenly min-h-screen">
