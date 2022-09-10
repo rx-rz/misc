@@ -22,19 +22,19 @@ export default function ProductSettings({ name, price }: ProductSettingsProps) {
 
   return (
     <div
-      className="md:w-5/12 flex justify-center items-center 
+      className="md:w-5/12 flex justify-center items-center w-11/12 
     md:h-maximalHeight flex-col h-halfHeight "
     >
       <div className="w-11/12   flex flex-col">
         <h1
-          className="dark:text-white text-5xl md:text-5xl font-medium 
+          className="text-primary text-4xl md:text-5xl font-medium
          py-3 lg:text-6xl w-5/6 m-auto mb-4"
         >
           {name}
         </h1>
         <p
           className="text-3xl font-medium md:text-4xl lg:text-5xl
-         text-secondary mb-4 w-5/6 m-auto"
+         dark:text-white mb-4 w-5/6 m-auto"
         >
           ${price}
         </p>
