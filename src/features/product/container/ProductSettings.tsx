@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Button } from "src/components";
 import { useCartContext } from "src/context/cartContext";
 type ProductSettingsProps = {
@@ -8,12 +7,8 @@ type ProductSettingsProps = {
 
 export default function ProductSettings({ name, price }: ProductSettingsProps) {
   const { onAddtoCart, quantity, setQuantity } = useCartContext()!;
+  quantity && setQuantity(1);
 
-  useEffect(() => {
-    if (quantity) {
-      setQuantity(1);
-    }
-  }, []);
 
   const product = {
     name: name,

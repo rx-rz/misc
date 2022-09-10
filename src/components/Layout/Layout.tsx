@@ -14,12 +14,11 @@ type LayoutProps = {
   children: React.ReactNode;
 };
 
-/**The Navbar Component accepts 3 link items as children and justifies them evenly */
 export default function Layout({ children }: LayoutProps) {
   const location = useLocation();
   const { totalQuantities } = useCartContext()!;
 
-  // /**Upon change in location, the cart closes if it is */
+
   useEffect(() => {
     handleCartClose();
   }, [location]);
@@ -50,7 +49,7 @@ export default function Layout({ children }: LayoutProps) {
 
         <div className="flex items-center">
           <Switcher />
-          <button onClick={handleCartOpen} className="flex items-center ml-3">
+          <button onClick={handleCartOpen} className="flex items-center ml-5">
             <img
               src={cartlogo}
               alt="Cart"
@@ -70,7 +69,8 @@ export default function Layout({ children }: LayoutProps) {
           <div>{children}</div>
         </div>
         <div
-          className="right-0 z-50  bg-slate-100 shadow-sm sm:w-7/12 md:w-6/12  w-11/12 dark:bg-slate-900  fixed top-0 overflow-x-hidden overflow-y-scroll bottom-0 m-auto"
+          className="right-0 z-50  bg-slate-100 shadow-sm sm:w-7/12 md:w-6/12  w-11/12 
+          dark:bg-slate-900  fixed top-0 overflow-x-hidden overflow-y-scroll bottom-0 m-auto"
           ref={cartRef}
         >
           <div className="w-10/12 m-auto">
