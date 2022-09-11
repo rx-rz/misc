@@ -10,7 +10,7 @@ export default function AvatarGrid() {
       {homeAvatars &&
         homeAvatars.map((product) => (
           <Link
-            to={`/${product.name}/${product.price}`}
+            to={`/${product.name}`}
             className="m-12 "
             key={product.name}
           >

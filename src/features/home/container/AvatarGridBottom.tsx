@@ -16,7 +16,7 @@ export default function AvatarGridBottom() {
       <div className="flex flex-wrap basis-7 md:basis-12 justify-center py-20 sm:py-20">
         {Avatars.map((avatar, index) => (
           <Link
-            to={`/${avatar.name}/${avatar.price}`}
+            to={`/${avatar.name}`}
             className="m-12"
             key={index}
           >

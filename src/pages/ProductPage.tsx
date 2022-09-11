@@ -8,8 +8,9 @@ import ErrorPage from "./ErrorPage";
 
 export default function ProductPage() {
   const { name = "x" } = useParams();
-  const { price = "" } = useParams();
   const [imageName, setImageName] = useState("biscuit");
+
+  document.title = `Misc Avatars: ${name}`
 
   function changeImageName(name: string) {
     setImageName(name);
@@ -18,18 +19,15 @@ export default function ProductPage() {
     window.scrollTo(0, 0);
   });
 
-  const permittedNames = Avatars.map((e) => e.name);
-  const permittedPrices = Avatars.map((e) => e.price);
+  const avatarIndex = Avatars.find((e) => e.name === name);
+  const avatarPrice = avatarIndex && avatarIndex.price;
 
-  const listsIncludeParams =
-    permittedNames.includes(name) && permittedPrices.includes(parseInt(price));
-
-  if (listsIncludeParams) {
+  if (avatarPrice) {
     return (
       <div className=" dark:bg-gray-900 h-fit md:flex  md:min-h-screen">
         <ProductDisplay imageType={name} imageName={imageName} />
         <ProductImages name={name} changeImageName={changeImageName} />
-        <ProductSettings name={name} price={price} />
+        <ProductSettings name={name} price={avatarPrice} />
       </div>
     );
   } else {

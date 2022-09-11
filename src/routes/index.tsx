@@ -9,7 +9,7 @@ const ErrorPage = lazy(() => import("../pages/ErrorPage"));
 
 const publicRoutes = [
   { path: "/", element: <HomePage /> },
-  { path: "/:name/:price", element: <ProductPage /> },
+  { path: "/:name", element: <ProductPage /> },
   { path: "/checkout", element: <CheckoutPage /> },
   { path: "*", element: <ErrorPage /> },
 ];
