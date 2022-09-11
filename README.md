@@ -22,7 +22,6 @@ This was used for unit tests
 
 ## Project Structure
 
-[Documentation](https://linktodocumentation)
 
 
 [Assets](https://github.com/temiloluwa-js/misc/tree/main/src/assets) :- This is where the images and fonts used in the project are stored
