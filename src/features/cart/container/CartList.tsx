@@ -9,7 +9,7 @@ export default function CartList() {
     <div className="flex flex-col align-middle h-screen">
       {cartItems.length > 0 ? (
         <div>
-          <div className="grid lg:grid-cols-2 gap-10 md:grid-cols-1 mb-16 mt-10">
+          <div className="grid xl:grid-cols-2 gap-10 md:grid-cols-1 mb-16 mt-10">
             {cartItems.map((cartItem: ProductProps) => (
               <div key={cartItem.name}>
                 <CartItem
