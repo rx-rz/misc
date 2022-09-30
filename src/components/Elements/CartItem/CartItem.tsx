@@ -7,53 +7,48 @@ import { Button } from "../Button";
 export function CartItem({ name, price, quantity }: ProductProps) {
   const { toggleCartItemQuantity, removeItemFromCart } = useCartContext()!;
   return (
-    <article className="  w-full border border-secondary mx-auto">
+    <article className="  w-full border border-secondary mx-auto font-AlbertSans">
+      <div className="font-bold py-2 my-auto w-full border-r border-r-secondary flex justify-between ">
+        <h1 className=" text-lg ml-4 dark:text-white  ">{name}</h1>
+        <h2 className=" text-md mr-4 text-secondary">${price}</h2>
+      </div>
       <img
         src={getImage(name)}
         alt={name}
         className="lg:h-50  w-full object-cover object-center"
       />
-      <div className="flex w-full h-20 border border-secondary ">
-        <div className="font-bold my-auto w-6/12 border-r border-r-secondary">
-          <h1 className="ml-3 text-lg dark:text-white ">{name}</h1>
-          <h2 className="ml-3 text-md text-secondary">${price}</h2>
-        </div>
-        <div className="font-bold my-auto w-6/12 flex">
-          <div className="mx-auto flex">
-            <Button
-              handleClick={() => toggleCartItemQuantity(name, "decrement")}
-              className="px-2 font-extrabold dark:text-white  sm:px-3 sm:py-1 "
-            >
-              -
-            </Button>
-            <p
-              className="border-2 px-2 border-slate-700 rounded-md font-medium 
-              dark:text-white dark:border-primary sm:px-3 sm:py-1"
-              data-testid="quantity"
-            >
-              {quantity}
-            </p>
-            <Button
-              handleClick={() => toggleCartItemQuantity(name, "increment")}
-              className="px-2 font-extrabold dark:text-white  sm:px-3 sm:py-1"
-            >
-              +
-            </Button>
-          </div>
+      <div className="flex w-full justify-between border border-secondary py-2">
+        <div className="flex ml-4">
           <Button
-            handleClick={() => removeItemFromCart(name)}
-            className="w-1/12 m-auto"
+            handleClick={() => toggleCartItemQuantity(name, "decrement")}
+            className="px-2 font-extrabold dark:text-white  sm:px-3 sm:py-1 "
           >
-            <img
-              src={close}
-              width="20px"
-              title="Delete Item"
-              alt="Close"
-              className="dark:invert mr-2"
-              data-testid="remove-button"
-            />
+            -
+          </Button>
+          <p
+            className="border-2 px-2 border-slate-700 rounded-md font-medium 
+              dark:text-white dark:border-primary sm:px-3 sm:py-1"
+            data-testid="quantity"
+          >
+            {quantity}
+          </p>
+          <Button
+            handleClick={() => toggleCartItemQuantity(name, "increment")}
+            className="px-2 font-extrabold dark:text-white  sm:px-3 sm:py-1"
+          >
+            +
           </Button>
         </div>
+        <Button handleClick={() => removeItemFromCart(name)} className="w-fit mr-4">
+          <img
+            src={close}
+            width="30px"
+            title="Delete Item"
+            alt="Close"
+            className="dark:invert"
+            data-testid="remove-button"
+          />
+        </Button>
       </div>
     </article>
   );
