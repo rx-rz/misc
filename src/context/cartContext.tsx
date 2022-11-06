@@ -1,4 +1,4 @@
-import React, { useContext, useEffect,  useState } from "react";
+import React, { useContext, useMemo,   useState } from "react";
 import { createContext } from "react";
 import toast from "react-hot-toast";
 
@@ -43,7 +43,7 @@ export const CartContextProvider = ({
   const [totalQuantities, setTotalQuantities] = useState(0);
   const [quantity, setQuantity] = useState(2);
 
-  useEffect(() => {
+  useMemo(() => {
     localStorage.setItem("cart", JSON.stringify(cartItems));
     let price = 0;
     for (let item of cartItems) {
