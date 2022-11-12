@@ -6,21 +6,21 @@ type ProductSettingsProps = {
   price: string | number;
 };
 
-export default function ProductSettings({ name, price }: ProductSettingsProps) {
+export const ProductSettings = ({ name, price }: ProductSettingsProps) => {
   const { onAddtoCart, quantity, setQuantity } = useCartContext()!;
   useEffect(() => {
     if (quantity) {
       setQuantity(1);
     }
   }, [quantity, setQuantity]);
-  
+
   const product = {
     name: name,
     price: price,
   };
 
   return (
-    <div
+    <aside
       className="md:w-5/12 flex justify-center items-center w-11/12 
     md:h-maximalHeight flex-col h-halfHeight "
     >
@@ -49,6 +49,6 @@ export default function ProductSettings({ name, price }: ProductSettingsProps) {
           </Button>
         </div>
       </div>
-    </div>
+    </aside>
   );
 }

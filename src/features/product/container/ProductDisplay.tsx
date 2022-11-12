@@ -4,17 +4,18 @@ type ProductDisplayProps = {
   imageName: string | undefined;
 };
 
-export default function ProductDisplay({
+export const  ProductDisplay = ({
   imageType,
   imageName,
-}: ProductDisplayProps) {
+}: ProductDisplayProps)  => {
   return (
-    <div className="md:w-5/12 rounded-b-xl">
+    <main className="md:w-5/12 rounded-b-xl">
       <img
-        className="object-center object-cover md:h-maximalHeight rounded-b-3xl md:rounded-none"
+        className="object-center object-cover md:h-maximalHeight
+         rounded-b-3xl md:rounded-none"
         src={getProductImages(imageType, imageName)}
         alt={imageType}
       />
-    </div>
+    </main>
   );
 }

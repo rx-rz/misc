@@ -1,16 +1,16 @@
 import PaypalCheckOutButton from "src/components/Elements/Checkout/PaypalCheckOutButton";
 import { useCartContext } from "src/context/cartContext";
-import CheckoutItems from "src/features/checkout/container/CheckoutItems";
+import { CheckoutItems } from "src/features";
 
 export default function CheckoutPage() {
-  document.title = "Misc Avatars: Checkout Page"
+  document.title = "Misc Avatars: Checkout Page";
   const { totalPrice, totalQuantities } = useCartContext()!;
   return (
-    <div className="flex  justify-evenly min-h-screen">
-      <div className="hidden md:w-6/12 md:block">
+    <section className="flex  justify-evenly min-h-screen">
+      <main className="hidden md:w-6/12 md:block">
         <CheckoutItems />
-      </div>
-      <div className="w-full md:w-4/12 my-4 ">
+      </main>
+      <aside className="w-full md:w-4/12 my-4 ">
         <div className="md:sticky top-16">
           <div
             className="bg-primary text-white  h-96 mb-4 
@@ -29,7 +29,7 @@ export default function CheckoutPage() {
             <PaypalCheckOutButton totalPrice={totalPrice} />
           </div>
         </div>
-      </div>
-    </div>
+      </aside>
+    </section>
   );
 }

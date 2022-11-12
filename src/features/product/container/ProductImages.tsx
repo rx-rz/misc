@@ -1,18 +1,21 @@
-import { Button } from "src/components";
-import { SmallerProductCard } from "src/components/Elements/Card/";
+import { Button, SmallerProductCard } from "src/components";
 import { getProductImagesForProductDisplay } from "../api/getProductImagesForProductDisplay";
 
-const promptUrls = ["biscuit", "inosuke", "tanjiro", "tenzin"];
+const promptUrls = ["brouhaha", "inosuke", "tanjiro", "tenzin"];
 type ProductImagesProps = {
   name: string | undefined;
   changeImageName: (name: string) => void;
 };
-export default function ProductImages({
+export const ProductImages = ({
   name,
   changeImageName,
-}: ProductImagesProps) {
+}: ProductImagesProps) => {
   return (
-    <div className="flex justify-evenly md:flex-col md:w-2/12 items-center mt-6 -mb-6 md:-mt-12 md:-mb-0">
+    <section
+      className="flex justify-evenly md:flex-col
+     md:w-2/12 items-center mt-6 -mb-6
+     md:-mt-12 md:-mb-0"
+    >
       {promptUrls.map((promptUrl, index) => (
         <Button handleClick={() => changeImageName(promptUrl)} key={index}>
           <SmallerProductCard
@@ -20,6 +23,6 @@ export default function ProductImages({
           />
         </Button>
       ))}
-    </div>
+    </section>
   );
-}
+};

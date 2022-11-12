@@ -43,6 +43,9 @@ export const CartContextProvider = ({
   const [totalQuantities, setTotalQuantities] = useState(0);
   const [quantity, setQuantity] = useState(2);
 
+  //store cart items in local storage.
+  //set the total price  and quantities to the 
+  //total price and quantity of cart items.
   useMemo(() => {
     localStorage.setItem("cart", JSON.stringify(cartItems));
     let price = 0;

@@ -1,8 +1,6 @@
 import { useLayoutEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ProductDisplay from "src/features/product/container/ProductDisplay";
-import ProductImages from "src/features/product/container/ProductImages";
-import ProductSettings from "src/features/product/container/ProductSettings";
+import { ProductDisplay, ProductImages, ProductSettings } from "src/features";
 import { Avatars } from "src/utils/avatars";
 import ErrorPage from "./ErrorPage";
 
@@ -10,7 +8,7 @@ export default function ProductPage() {
   const { name = "x" } = useParams();
   const [imageName, setImageName] = useState("biscuit");
 
-  document.title = `Misc Avatars: ${name}`
+  document.title = `Misc Avatars: ${name}`;
 
   function changeImageName(name: string) {
     setImageName(name);
@@ -24,11 +22,11 @@ export default function ProductPage() {
 
   if (avatarPrice) {
     return (
-      <div className=" dark:bg-gray-900 h-fit md:flex  md:min-h-screen">
+      <main className=" dark:bg-gray-900 h-fit md:flex  md:min-h-screen">
         <ProductDisplay imageType={name} imageName={imageName} />
         <ProductImages name={name} changeImageName={changeImageName} />
         <ProductSettings name={name} price={avatarPrice} />
-      </div>
+      </main>
     );
   } else {
     return <ErrorPage />;

@@ -1,6 +1,6 @@
 import { useCartContext } from "src/context/cartContext";
-import { CartItem } from "src/components/Elements/CartItem";
-export default function CheckoutItems() {
+import { CartItem } from "src/components";
+export const  CheckoutItems = () => {
   const { cartItems } = useCartContext()!;
   return (
     <div className="grid xl:grid-cols-2 grid-cols-1 gap-20 my-[15px]">
