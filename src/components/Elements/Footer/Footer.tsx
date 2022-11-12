@@ -5,7 +5,7 @@ export function Footer() {
     <footer className="h-52 sm:h-96 dark:bg-gray-900 flex border-t-2 border-primary">
       <div className="text-2xl sm:text-5xl flex flex-col justify-center w-1/2 text-center dark:text-white ">
         <a
-          href="https://www.twitter.com/temiloluwa_js"
+          href="https://www.twitter.com/_abdurrazaq_"
           className="my-2 transition-colors duration-300 hover:text-blue-600"
           target="_blank"
           rel="noreferrer"

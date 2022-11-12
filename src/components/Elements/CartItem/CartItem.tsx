@@ -1,7 +1,6 @@
 import { ProductProps } from "src/types/Product";
 import { getImage } from "src/features/home/api/getImage";
 import { useCartContext } from "src/context/cartContext";
-import close from "src/assets/delete.svg";
 import { Button } from "../Button";
 
 export function CartItem({ name, price, quantity }: ProductProps) {
@@ -41,7 +40,7 @@ export function CartItem({ name, price, quantity }: ProductProps) {
         </div>
         <Button handleClick={() => removeItemFromCart(name)} className="w-fit mr-4">
           <img
-            src={close}
+            src="/assets/delete.svg"
             width="30px"
             title="Delete Item"
             alt="Close"

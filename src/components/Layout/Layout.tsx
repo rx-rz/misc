@@ -4,10 +4,8 @@ import { NavLink, useLocation } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 
 import { Header, Switcher } from "src/components";
-import logo from "src/assets/logo.png";
-const CartList = React.lazy(
-  () => import("src/features/cart/container/CartList")
-);
+
+import {CartList} from "src/features"
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -45,7 +43,7 @@ export default function Layout({ children }: LayoutProps) {
            text-2xl md:text-3xl flex items-center"
           to="/"
         >
-          <img src={logo} alt="MiscAvatars" width="60px" height="60px" />{" "}
+          <img src="/assets/logo.png" alt="MiscAvatars" width="60px" height="60px" />{" "}
           <h1 className="-ml-4">MA</h1>
         </NavLink>
 
