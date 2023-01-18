@@ -5,7 +5,7 @@ import { Toaster } from "react-hot-toast";
 
 import { Header, Switcher } from "src/components";
 
-import {CartList} from "src/features"
+import { CartList } from "src/features";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -23,11 +23,12 @@ export default function Layout({ children }: LayoutProps) {
   const cartRef = useRef<HTMLDivElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
 
+  /*a function for closing the cart */
   const handleCartClose = () => {
     cartRef.current!.style.display = "none";
     bodyRef.current!.style.opacity = "1";
   };
-
+  /*a function for opening the cart */
   const handleCartOpen = () => {
     cartRef.current!.style.display === "none" &&
       (cartRef.current!.style.display = "block");
@@ -36,14 +37,18 @@ export default function Layout({ children }: LayoutProps) {
 
   return (
     <div className="dark:bg-gray-900  w-full bg-tertiary">
-      
       <Header>
         <NavLink
           className="font-medium text-primary dark:text-white
            text-2xl md:text-3xl flex items-center"
           to="/"
         >
-          <img src="/assets/logo.png" alt="MiscAvatars" width="60px" height="60px" />{" "}
+          <img
+            src="/assets/logo.png"
+            alt="MiscAvatars"
+            width="60px"
+            height="60px"
+          />{" "}
           <h1 className="-ml-4">MA</h1>
         </NavLink>
 

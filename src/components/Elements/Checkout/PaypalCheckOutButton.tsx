@@ -5,9 +5,7 @@ type CheckoutButtonProps = {
 export default function PaypalCheckOutButton({
   totalPrice,
 }: CheckoutButtonProps) {
-
   return (
-    
     <PayPalButtons
       style={{
         shape: "rect",
@@ -15,6 +13,7 @@ export default function PaypalCheckOutButton({
         layout: "vertical",
         height: 55,
       }}
+      /*function that creates an order gicen the toal price of the sale. */
       createOrder={(data, actions) => {
         return actions.order.create({
           purchase_units: [
@@ -30,7 +29,6 @@ export default function PaypalCheckOutButton({
       onApprove={async (data, actions) => {
         const order = await actions!.order!.capture();
         console.log("order", order);
-
         // handleApprove(data.orderID);
       }}
     />
