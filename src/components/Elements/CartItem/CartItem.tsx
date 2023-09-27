@@ -18,7 +18,7 @@ export function CartItem({ name, price, quantity }: ProductProps) {
       />
       <div className="flex w-full justify-between border border-secondary py-2">
         <div className="flex ml-4">
-          <Button
+          <Button 
             handleClick={() => toggleCartItemQuantity(name, "decrement")}
             className="px-2 font-extrabold dark:text-white  sm:px-3 sm:py-1 "
           >
