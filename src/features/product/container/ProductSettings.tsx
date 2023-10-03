@@ -33,7 +33,7 @@ export const ProductSettings = ({ name, price }: ProductSettingsProps) => {
         </h1>
         <p
           className="text-3xl font-medium md:text-4xl lg:text-5xl
-         text-secondary mb-4 w-5/6 m-auto"
+         dark:text-tertiary text-primary mb-4 w-5/6 m-auto"
         >
           ${price}
         </p>
@@ -41,8 +41,8 @@ export const ProductSettings = ({ name, price }: ProductSettingsProps) => {
       <div className="w-11/12 ">
         <div className="w-10/12 m-auto">
           <Button
-            className="left-0 my-3  font-extrabold bg-primary  p-1
-             text-white  w-3/5 sm:w-2/5 font-AlbertSans "
+            className="left-0 my-3  font-extrabold bg-primary dark:bg-tertiary  p-1
+             text-tertiary dark:text-primary  w-3/5 sm:w-2/5 font-AlbertSans "
             handleClick={() => onAddtoCart(product)}
           >
             ADD TO CART

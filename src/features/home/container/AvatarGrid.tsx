@@ -9,11 +9,7 @@ export const AvatarGrid = () => {
     <section className="flex  flex-wrap md:basis-2 justify-center py-4 sm:py-8">
       {homeAvatars &&
         homeAvatars.map((product) => (
-          <Link
-            to={`/${product.name}`}
-            className="m-12 "
-            key={product.name}
-          >
+          <Link to={`/${product.name}`} className="m-12 " key={product.name}>
             <ProductCard
               imageUrl={getImage(product.name)}
               name={product.name}
@@ -23,4 +19,4 @@ export const AvatarGrid = () => {
         ))}
     </section>
   );
-}
+};

@@ -36,7 +36,7 @@ export default function Layout({ children }: LayoutProps) {
   };
 
   return (
-    <div className="dark:bg-gray-900  w-full bg-tertiary">
+    <div className="dark:bg-primary   w-full bg-tertiary ">
       <Header>
         <NavLink
           className="font-medium text-primary dark:text-white
@@ -74,9 +74,9 @@ export default function Layout({ children }: LayoutProps) {
           <div>{children}</div>
         </div>
         <div
-          className="right-0 z-50  bg-slate-100 shadow-sm
+          className="right-0 z-50  bg-tertiary shadow-sm
            sm:w-7/12 md:w-6/12  w-11/12 
-          dark:bg-slate-900  fixed top-0
+          dark:bg-primary  fixed top-0
            overflow-x-hidden overflow-y-scroll
           bottom-0 m-auto"
           ref={cartRef}

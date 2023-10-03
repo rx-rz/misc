@@ -2,7 +2,7 @@ export const IntroText = () => {
   return (
     <main className="flex flex-col justify-center items-center my-6">
       <h1
-        className="text-primary text-5xl md:text-7xl md:w-3/4
+        className="text-primary dark:text-tertiary text-5xl md:text-7xl md:w-3/4
        lg:text-8xl xl:text-9xl max-w-6xl text-center
        font-bold pb-4 pt-6 sm:py-12"
       >

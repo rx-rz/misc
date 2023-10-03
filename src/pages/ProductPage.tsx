@@ -6,12 +6,12 @@ import ErrorPage from "./ErrorPage";
 
 export default function ProductPage() {
   const { name = "x" } = useParams();
-  const [imageName, setImageName] = useState("biscuit");
+  const [imageName, setImageName] = useState(name);
 
   document.title = `Misc Avatars: ${name}`;
 
-  function changeImageName(name: string) {
-    setImageName(name);
+  function changeImageName(name: string | undefined) {
+    if (name) setImageName(name);
   }
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
@@ -22,8 +22,8 @@ export default function ProductPage() {
 
   if (avatarPrice) {
     return (
-      <main className=" dark:bg-gray-900 h-fit md:flex  md:min-h-screen">
-        <ProductDisplay imageType={name} imageName={imageName} />
+      <main className=" dark:bg-primary h-fit md:flex  md:min-h-screen">
+        <ProductDisplay name={imageName} />
         <ProductImages name={name} changeImageName={changeImageName} />
         <ProductSettings name={name} price={avatarPrice} />
       </main>

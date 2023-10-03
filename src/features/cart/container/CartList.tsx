@@ -24,18 +24,18 @@ export const  CartList = () => {
             ))}
           </div>
           <h1
-            className="dark:text-slate-100 font-extrabold 
+            className="dark:text-tertiary font-extrabold 
           text-2xl w-fit mx-auto mt-4 font-AlbertSans"
           >
-            Total Price:<span className="text-primary"> ${totalPrice}</span>
+            Total Price:<span className="text-primary dark:text-tertiary"> ${totalPrice}</span>
           </h1>
           <div className="flex justify-center">
             <Link
               to="/checkout"
-              className="bg-primary text-lg w-11/12 mx-auto
-               mt-4 font-AlbertSans text-black font-bold pt-1 
+              className="  bg-primary text-lg w-11/12 mx-auto
+               mt-4 font-AlbertSans text-white dark:bg-tertiary dark:text-black font-bold pt-1 
                mb-8 py-2 transition-colors duration-300
-               text-center  hover:text-white"
+               text-center  "
             >
               Proceed To Checkout
             </Link>

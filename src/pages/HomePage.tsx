@@ -10,7 +10,7 @@ export default function HomePage() {
   return (
     <main
       className="flex flex-col w-fit  relative bg-tertiary
-    dark:bg-slate-900  scrollbar-thumb-black"
+    dark:bg-primary  scrollbar-thumb-black"
     >
       <Suspense fallback={<div>Loading....</div>}>
         <IntroText />

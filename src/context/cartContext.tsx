@@ -67,9 +67,9 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
     toast.success("Item added to cart", {
       style: {
         borderRadius: 0,
-        color: "#1EA081",
+        color: "#000",
         backgroundColor: "#fff",
-        border: "1px solid #1EA081",
+        border: "1px solid #000",
       },
       duration: 700,
     });
