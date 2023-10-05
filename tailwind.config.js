@@ -6,9 +6,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#000",
-        secondary: "#111",
-        tertiary: "#ffffff",
+        primary: "#2B2B2D",
+        secondary: "#2B2B2D",
+        tertiary: "#E9E8DC",
       },
       height: {
         maximalHeight: "calc(100vh - 3rem)",

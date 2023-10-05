@@ -2,7 +2,6 @@ import { Button, SmallerProductCard } from "src/components";
 import { getProductImagesForProductDisplay } from "../api/getProductImagesForProductDisplay";
 import { useParams } from "react-router-dom";
 
-
 type ProductImagesProps = {
   name: string | undefined;
   changeImageName: (name: string) => void;
@@ -11,8 +10,13 @@ export const ProductImages = ({
   name,
   changeImageName,
 }: ProductImagesProps) => {
-  const {name: initialName} = useParams()
-  const promptUrls = [initialName, "inosuke", "tanjiro", "tenzin"];
+  const { name: initialName } = useParams();
+  const promptUrls = [
+    initialName,
+    `inosuke${initialName}`,
+    `tanjiro${initialName}`,
+    `tenzin${initialName}`,
+  ];
   return (
     <section
       className="flex justify-evenly md:flex-col
